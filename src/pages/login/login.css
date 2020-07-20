@@ -1,0 +1,27 @@
+img {
+width: 535px;
+height: 409px;
+display: flex;
+}
+div {
+background: rgba(246, 241, 241, 0.79); 
+align-items: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+font-family: Fira Sans;
+font-size: 24px;
+line-height: 29px;
+color: #565555;
+}
+input {
+background: #FFFDFD;
+border: 1px solid #000000;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
+align-items: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
