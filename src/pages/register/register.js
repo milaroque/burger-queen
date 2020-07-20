@@ -9,11 +9,11 @@ return (
         <Input type="email" id="email" class="email" placeholder="Digite seu email" />
         <Input type="password" id="password" class="password" placeholder="Digite sua senha" />
         <Button id="register" class="register" name="Registrar" />
-        <div className='select-role'>
-          <label htmlFor='kitchen'>COZINHA</label>
+        <div className=''>
+          <label htmlFor='cozinha'>COZINHA</label>
           <Input type='radio' className='radio-button' name='option' id='kitchen' />
-          <label htmlFor='hall'>SALÃO</label>
-          <Input type='radio' className='radio-button' name='option' id='hall' />
+          <label htmlFor='salao'>SALÃO</label>
+          <Input type='radio' className='' name='' id='salao' />
         </div>
     </form>
 
