@@ -16,8 +16,8 @@ return (
         </figure>
         <div class= 'form-login'>
             <form>
-                <Input type="email" id="email" placeholder="Digite seu email" />
-                <Input type="password" id="password" placeholder="Digite sua senha" />
+                <Input type="email" id="email" class='input-login' placeholder="Digite seu email" />
+                <Input type="password" id="password" class='input-login' placeholder="Digite sua senha" />
                 <Button id="login" class="button-loggin" name="Entrar" />
                 <p onClick={ () => setIsModalVisible(true) }>Ainda não tem cadastro? Registre-se aqui!</p>
                 {isModalVisible ? (

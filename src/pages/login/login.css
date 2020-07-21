@@ -10,14 +10,14 @@ display: flex;
 margin-left: 108px;
 }
 
-input {
+.input-login {
 border: solid 1.5px #3c2415;
 border-radius: 40px;
 box-sizing: border-box;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+box-shadow: 15px 15px 8px rgba(216, 84, 84, 0.308);
 font-size: 20px;
 height: 80px;
-margin: 30px 50px;
+margin: 30px 75px;
 padding-left: 20px;
 width: 80%;
 }
@@ -29,53 +29,53 @@ color: #fff;
 font-size: 25px;
 font-weight: 700;
 height: 70px;
-margin: 30px 172px;
+margin: 30px 192px;
 width: 50%;
 }
 p{
-width: 514px;
-margin: 30px 100px;
+width: 494px;
+margin-left: 159px;
 font-style: normal;
 font-weight: normal;
 font-size: 24px;
-text-align: center;
 color: #565555;
 }
 
-@media (min-width:1200px) {
-    img{
-        
-        margin: auto;
-    }
-    figure{
-        display: flex;
-        width: 50vw;
-        height: 100vh;
-    }
-    .div{
-        display: flex;
-    }
-    .form-login{
+
+@media (min-width:1000px) {
+  img{
+    margin: auto;
+  }
+  figure{
+    display: flex;
+    width: 50vw;
+    height: 100vh;
+  }
+  .div{
+    display: flex;
+    background: rgba(246, 241, 241, 0.79);
+  }
+  .form-login{
     width: 50vw;
     height: 100vh;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fcfbfae7;
-    }
-    input{
-        height: 53px;
-        width: 50%;
-    }
-    .button-loggin{
-        width: 30%;
-        height: 40px;
-        transition: background-color 3ms ease;
-    }
-    p{
-        font-size: 20px;
-    }
-
+    
+  }
+  .input-login{
+    height: 60px;
+    margin: 30px 0px;
+    width: 65%;
+  }
+  .button-loggin{
+    width: 30%;
+    height: 40px;
+    transition: background-color 3ms ease;
+  }
+  p{
+    margin-left: 117px;
+  }
 }
 

@@ -1,0 +1,72 @@
+.input-text{
+border: solid 1.5px #3c2415;
+border-radius: 40px;
+box-sizing: border-box;
+box-shadow: 15px 15px 8px rgba(216, 84, 84, 0.308);
+font-size: 20px;
+height: 50px;
+
+padding-left: 20px;
+width: 70%;
+margin-top:  35px;
+margin-left: 70px;
+}
+.btn-register{
+background-color: #CC1900;
+border: none;
+border-radius: 40px;
+color: #fff;
+font-size: 25px;
+font-weight: 700;
+height: 50px;
+margin-top: 50px;
+margin-left: 112px;
+width: 50%;
+}
+.chef-kitchen{
+  width: 86px;
+  height: 70px;
+  margin: 0px;
+  display: flex;
+    
+}
+.img-hall{
+  width: 86px;
+  height: 70px;
+  margin: 0px;
+  display: flex;
+}
+.btn-radio-kitchen{
+  -webkit-transform: scale(2.5);
+  margin: auto;
+}
+.btn-radio-hall{
+  -webkit-transform: scale(2.5);
+  margin-left: 93px;
+} 
+.label-kitchen{
+  font-weight: bold;
+  font-size: 30px;
+  align-self: center;
+  margin-left: 80px;
+  font-weight: bold;
+}
+.label-hall{
+  font-weight: bold;
+  font-size: 31px;
+  align-self: center;
+  margin-left: 80px;
+
+} 
+.select-type{
+  display: flex;
+    align-items: center;
+    margin-left: 17px;
+    margin-top: 65px;
+}
+.select-type-two{
+  display: flex;
+    align-items: center;
+    margin-top: 14px;
+    margin-left: 17px;
+}
