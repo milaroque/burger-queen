@@ -4,8 +4,8 @@ import Swal from 'sweetalert2';
 import Button from '../../components/button/Button'
 import Input from '../../components/input/Input'
 import Image from '../../components/image/image'
-import Chef from '../../assets/chef.png'
-import Hall from '../../assets/hall.png'
+import chef from '../../assets/chef.png'
+import hall from '../../assets/hall.png'
 import firebase from '../../config/firebase.js'
 import "firebase/firebase-auth";
 import "firebase/firebase-firestore";
