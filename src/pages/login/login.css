@@ -16,6 +16,7 @@ img{
   padding-left: 28px;
   width: 100vw;
   font-size: 21px;
+  outline: none;
 }
 .button-loggin{
   font-size: 22px;
@@ -27,6 +28,7 @@ img{
   border-radius: 40px;
   color: #fff;
   cursor: pointer;
+  outline: none;
 }
 p{
   width: 100vw;

@@ -13,6 +13,7 @@
   width: 50vw;
   margin-left: 15px;
   margin-top: 23px;
+  outline: none;
 }
 .btn-register{
   font-size: 12px;
@@ -23,6 +24,7 @@
   border: none;
   border-radius: 13px;
   color: #fff;
+  outline: none;
 }
 .chef-kitchen, .img-hall{
   width: 47px;
