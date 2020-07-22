@@ -8,7 +8,7 @@ import './register.css'
 
 const Register = () => {
 return (
-    <form>
+    <form class='form-register'>
         <Input type="name" id="name" class="input-text" placeholder="Nome e Sobrenome" />
         <Input type="email" id="email" class="input-text" placeholder="Digite seu email" />
         <Input type="password" id="password" class="input-text" placeholder="Digite sua senha" />

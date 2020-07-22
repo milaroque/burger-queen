@@ -14,8 +14,8 @@ return (
         <figure>
         <Image src={logo} alt='logo' class='logo-login'/>
         </figure>
-        <div class= 'form-login'>
-            <form>
+        <div class='select-form'>
+            <form class= 'form-login'>
                 <Input type="email" id="email" class='input-login' placeholder="Digite seu email" />
                 <Input type="password" id="password" class='input-login' placeholder="Digite sua senha" />
                 <Button id="login" class="button-loggin" name="Entrar" />
