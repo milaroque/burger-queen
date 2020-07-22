@@ -1,27 +1,103 @@
-img {
-width: 535px;
-height: 409px;
-display: flex;
+* {
+margin: 0;
+padding: 0;
 }
-div {
-background: rgba(246, 241, 241, 0.79); 
-align-items: center;
-display: flex;
-flex-direction: column;
-justify-content: center;
-font-family: Fira Sans;
-font-size: 24px;
-line-height: 29px;
-color: #565555;
+img{
+  width: 100vw;
+  display: flex;
 }
-input {
-background: #FFFDFD;
-border: 1px solid #000000;
-box-sizing: border-box;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 30px;
-align-items: center;
-display: flex;
-flex-direction: column;
-justify-content: center;
+.input-login{
+  border: solid 1.5px #3c2415;
+  border-radius: 40px;
+  box-sizing: border-box;
+  box-shadow: 3px 21px 13px rgba(216, 84, 84, 0.308);
+  height: 56px;
+  margin: 20px 14px;
+  padding-left: 28px;
+  width: 100vw;
+  font-size: 21px;
+}
+.button-loggin{
+  font-size: 22px;
+  height: 46px;
+  margin: 19px 91px;
+  width: 50vw;
+  background-color: #CC1900;
+  border: none;
+  border-radius: 40px;
+  color: #fff;
+  
+}
+p{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  font-size: 17px;
+  margin-top: 23px;
+  color: #565555;
+  cursor: pointer;
+}
+.form-login{
+  display: flex;
+  flex-flow: wrap;
+}
+@media (min-width:750px) {
+  img {
+    width: 80vw;
+    margin-left: 80px;
+  }
+  .input-login {
+    height: 78px;
+    margin: 30px 24px;  
+    font-size: 25px;
+    box-shadow: 6px 26px 10px rgba(216, 84, 84, 0.308);
+    
+  }
+  .button-loggin{
+    font-size: 40px;
+    height: 70px;
+    margin: 28px 106px; 
+    width: 100vw;
+  }
+  p{
+    font-size: 30px;
+  } 
+}
+@media (min-width:1200px) {
+  img{
+    margin: auto;
+    width: 452px;
+    height: 386px;
+  }
+  figure{
+    display: flex;
+    width: 50vw;
+    height: 100vh;
+  }
+  .div{
+    display: flex;
+    background: rgba(246, 241, 241, 0.79);
+  }
+  .form-login{
+    width: 50vw;
+    display: flex;
+    width: 60vw;
+    justify-content: center;
+  }
+  .input-login{
+    height: 48px;
+    width: 65%;
+    box-shadow: 6px 14px 10px rgba(216, 84, 84, 0.308);
+  }
+  .button-loggin{
+    width: 38%;
+    height: 40px;
+    font-size: 22px;
+  }
+  p{
+    font-size: 19px;
+  }
+  .select-form{
+    align-self: center;
+  }
 }
