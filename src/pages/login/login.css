@@ -27,8 +27,8 @@ img{
   border: none;
   border-radius: 40px;
   color: #fff;
+  cursor: pointer;
   outline: none;
-  
 }
 p{
   width: 100vw;
