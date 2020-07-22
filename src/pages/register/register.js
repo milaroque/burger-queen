@@ -4,8 +4,8 @@ import Swal from 'sweetalert2';
 import Button from '../../components/button/Button'
 import Input from '../../components/input/Input'
 import Image from '../../components/image/image'
-import Chef from '../../assets/chef.png'
-import Hall from '../../assets/hall.png'
+import chef from '../../assets/chef.png'
+import hall from '../../assets/hall.png'
 import firebase from '../../config/firebase.js'
 import "firebase/firebase-auth";
 import "firebase/firebase-firestore";
@@ -92,12 +92,12 @@ return (
         <Input type="password" id="passwordConfirm" class="input-text" value={passwordConfirm} onChange={e => setPasswordConfirm(e.target.value)} placeholder="Confirme a sua senha" />
         <Button id="register" class="btn-register" type='submit' onClick={createUser} name="Registrar" />
         <div className='select-type'>
-          <Image src={Chef} alt='img-chef' class='chef-kitchen'/>
+          <Image src={chef} alt='img-chef' class='chef-kitchen'/>
           <label htmlFor='cozinha' className='label-kitchen'>COZINHA</label>
           <Input type='radio' checked class='btn-radio-kitchen' name='job' value='kitchen' onChange={e => setJob(e.target.value)} id='kitchen' />
           </div>
           <div className='select-type-two'>
-            <Image src={Hall} alt='img-hall' class='img-hall'/>
+            <Image src={hall} alt='img-hall' class='img-hall'/>
             <label htmlFor='salao' className='label-hall'>SALÃO</label>
             <Input type='radio' class='btn-radio-hall' name='job' value='hall' onChange={e => setJob(e.target.value)} id='hall' />
           </div>
