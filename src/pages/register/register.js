@@ -2,8 +2,8 @@ import React from 'react';
 import Button from '../../components/button/Button'
 import Input from '../../components/input/Input'
 import Image from '../../components/image/image'
-import Chef from '../../assets/chef.png'
-import Hall from '../../assets/hall.png'
+import chef from '../../assets/chef.png'
+import hall from '../../assets/hall.png'
 import './register.css'
 
 const Register = () => {
@@ -14,12 +14,12 @@ return (
         <Input type="password" id="password" class="input-text" placeholder="Digite sua senha" />
         <Button id="register" class="btn-register" name="Registrar" />
         <div class='select-type'>
-          <Image src={Chef} alt='img-chef' class='chef-kitchen'/>
+          <Image src={chef} alt='img-chef' class='chef-kitchen'/>
           <label htmlFor='cozinha' class='label-kitchen'>COZINHA</label>
           <Input type='radio' class='btn-radio-kitchen' name='option-kitchen' id='kitchen' />
           </div>
           <div class='select-type-two'>
-            <Image src={Hall} alt='img-hall' class='img-hall'/>
+            <Image src={hall} alt='img-hall' class='img-hall'/>
             <label htmlFor='salao' class='label-hall'>SALÃO</label>
             <Input type='radio' class='btn-radio-hall' name='option-hall' id='hall' />
           </div>
