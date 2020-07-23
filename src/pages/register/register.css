@@ -25,6 +25,7 @@
   border-radius: 13px;
   color: #fff;
   outline: none;
+  cursor: pointer;
 }
 .chef-kitchen, .img-hall{
   width: 39px;
@@ -34,9 +35,11 @@
 }
 .btn-radio-hall{
   margin-left: 36px;
+  cursor: pointer;
 }
 .btn-radio-kitchen{
-  margin-left: 17px
+  margin-left: 17px;
+  cursor: pointer;
 }
 .label-kitchen, .label-hall{
   font-weight: bold;
@@ -92,7 +95,7 @@
     height: 25px;
   }
   .btn-radio-hall{
-    margin-left: 48px;
+    margin-left: 44px;
   }  
   .label-kitchen, .label-hall{
     font-size: 29px;
