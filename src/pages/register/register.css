@@ -18,7 +18,7 @@
 .btn-register{
   font-size: 12px;
   height: 24px;
-  margin: 16px 38px 3px 33px;
+  margin: 12px 38px 3px 33px;
   width: 50vw;
   background-color: #CC1900;
   border: none;
@@ -33,13 +33,12 @@
   margin: 11px;
   display: flex;
 }
-.btn-radio-hall{
+.btn-radio-hall, .btn-radio-kitchen{
   margin-left: 36px;
   cursor: pointer;
 }
 .btn-radio-kitchen{
   margin-left: 17px;
-  cursor: pointer;
 }
 .label-kitchen, .label-hall{
   font-weight: bold;
@@ -50,13 +49,10 @@
 .label-hall{
   font-size: 15px;
 } 
-.select-type{
+.select-type, .select-type-two{
   display: flex;
   align-items: center;
-}
-.select-type-two{
-  display: flex;
-  align-items: center;
+  margin-left: 20px;
 }
 @media (min-width:750px) {
   .input-text{

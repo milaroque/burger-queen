@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Button from '../../components/button/Button'
 import Input from '../../components/input/Input'
 import Image from '../../components/image/image'
@@ -13,8 +13,8 @@ import { useHistory } from "react-router-dom";
 import './login.css'
 
 const Login = () => {
-    const [isModalVisible, setIsModalVisible] = useState(false);
-    const [email, setEmail] = useState("");
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
 
@@ -39,14 +39,14 @@ const Login = () => {
             .collection("users")
             .doc(uid.user.uid)
             .get()
-            .then((doc) => { 
+            .then((doc) => {
               if (doc.data().job === "hall") {
                 history.push("/newRequest");
               } else {
                 history.push("/ordersReceived");
-              }  
+              }
             })
-        }) 
+        })
         .catch(function (error) {
           if (error.code === "auth/user-not-found") {
             Swal.fire({
@@ -73,26 +73,26 @@ const Login = () => {
     loginUser(email, password);
   };
 
-return (
+  return (
     <div className='div'>
-        <figure>
-        <Image src={logo} alt='logo' class='logo-login'/>
-        </figure>
-        <div className='select-form'>
-            <form className= 'form-login'>
-                <Input type="email" id="email" class='input-login'  value={email}
-          onChange={(e) => setEmail(e.target.value)} placeholder="Digite seu email" />
-                <Input type="password" id="password" class='input-login' value={password}
-          onChange={(e) => setPassword(e.target.value)} placeholder="Digite sua senha" />
-                <Button id="login" class="button-loggin" name="Entrar" onClick={signIn}/>
-                <p onClick={ () => setIsModalVisible(true) }>Ainda não tem cadastro? Registre-se aqui!</p>
-                {isModalVisible ? (
-                <Modal onClose={ () => setIsModalVisible(false) }>
-                    <Register />
-                </Modal>
-                ) : null}
-            </form>
-        </div>
+      <figure>
+        <Image src={logo} alt='logo' class='logo-login' />
+      </figure>
+      <div className='select-form'>
+        <form className='form-login'>
+          <Input type="email" id="email" class='input-login' value={email}
+            onChange={(e) => setEmail(e.target.value)} placeholder="Digite seu email" />
+          <Input type="password" id="password" class='input-login' value={password}
+            onChange={(e) => setPassword(e.target.value)} placeholder="Digite sua senha" />
+          <Button id="login" class="button-loggin" name="Entrar" onClick={signIn} />
+          <p onClick={() => setIsModalVisible(true)}>Ainda não tem cadastro? Registre-se aqui!</p>
+          {isModalVisible ? (
+            <Modal onClose={() => setIsModalVisible(false)}>
+              <Register />
+            </Modal>
+          ) : null}
+        </form>
+      </div>
     </div>
   );
 };
