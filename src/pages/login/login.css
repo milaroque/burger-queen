@@ -5,16 +5,18 @@ padding: 0;
 img{
   width: 100vw;
   display: flex;
+  margin-bottom: 27px;
+  margin-top: 15px;
 }
 .input-login{
   border: solid 1.5px #3c2415;
   border-radius: 40px;
   box-sizing: border-box;
   box-shadow: 3px 21px 13px rgba(216, 84, 84, 0.308);
-  height: 56px;
-  margin: 20px 14px;
+  height: 49px;
+  margin: 8px 20px 23px 27px;
   padding-left: 28px;
-  width: 100vw;
+  width: 90vw;
   font-size: 21px;
   outline: none;
 }
@@ -34,8 +36,8 @@ p{
   width: 100vw;
   display: flex;
   justify-content: center;
-  font-size: 17px;
-  margin-top: 23px;
+  font-size: 14px;
+  margin-top: 8px;
   color: #565555;
   cursor: pointer;
 }
@@ -50,19 +52,19 @@ p{
   }
   .input-login {
     height: 78px;
-    margin: 30px 24px;  
+    margin: 10px 10px 31px 43px;
     font-size: 25px;
     box-shadow: 6px 26px 10px rgba(216, 84, 84, 0.308);
-    
   }
   .button-loggin{
     font-size: 40px;
-    height: 70px;
-    margin: 28px 106px; 
-    width: 100vw;
+    height: 65px;
+    margin: 28px 106px;
+    width: 80vw;
   }
   p{
     font-size: 30px;
+    margin-top: 36px;
   } 
 }
 @media (min-width:1200px) {
