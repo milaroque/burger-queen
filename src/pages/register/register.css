@@ -8,11 +8,11 @@
   box-sizing: border-box;
   box-shadow: 9px 5px 9px rgba(216, 84, 84, 0.308);
   font-size: 10px;
-  height: 23px;
+  height: 20px;
   padding-left: 20px;
   width: 50vw;
   margin-left: 15px;
-  margin-top: 23px;
+  margin-top: 20px;
   outline: none;
 }
 .btn-register{
@@ -27,8 +27,8 @@
   outline: none;
 }
 .chef-kitchen, .img-hall{
-  width: 47px;
-  height: 45px;
+  width: 39px;
+  height: 32px;
   margin: 11px;
   display: flex;
 }
@@ -55,7 +55,6 @@
   display: flex;
   align-items: center;
 }
-
 @media (min-width:750px) {
   .input-text{
     border: solid 1.5px #3c2415;
@@ -67,7 +66,7 @@
     padding-left: 20px;
     width: 90;
     width: 90%;
-    margin-top: 35px;
+    margin-top: 27px;
     margin-left: 26px;
   }
   .btn-register{
@@ -78,13 +77,13 @@
     font-size: 25px;
     font-weight: 700;
     height: 50px;
-    margin-top: 50px;
+    margin-top: 43px;
     margin-left: 112px;
     width: 50%;
   }
   .chef-kitchen, .img-hall{
-    width: 86px;
-    height: 70px;
+    width: 73px;
+    height: 61px;
     margin: 0px;
     display: flex;
   }
@@ -104,32 +103,36 @@
   .label-hall{
     font-size: 31px;
   } 
-  .select-type{
+  .select-type, .select-type-two{
     display: flex;
     align-items: center;
-    margin-left: 17px;
-    margin-top: 65px;
+    margin-left: 87px;
+    margin-top: 31px;
   }
   .select-type-two{
-    display: flex;
-    align-items: center;
     margin-top: 14px;
-    margin-left: 17px;
+    margin-left: 87px;
   }
 }
 @media (min-width:1200px) {
   .input-text{
+    box-shadow: 6px 4px 4px rgba(216, 84, 84, 0.308);
     margin-left: 37px;
     margin-top: 9px;
+    height: 41px;
   }
   .btn-register{
-    margin-left: 72px;
-    margin-top: 20px;
-    width: 80%;
+    margin-left: 194px;
+    margin-top: 13px;
+    width: 50%;
+    height: 31px;
+    font-size: 19px;
   }
   .select-type, .select-type-two{
-    margin-left: 35px;
-    margin-top: 20px;
+    margin-left: 86px;
+    margin-top: 15px;
   }
-  
+  .label-kitchen,.label-hall{
+    font-size: 17px;
+  }
 }

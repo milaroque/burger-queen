@@ -34,13 +34,13 @@ const Login = () => {
         .auth()
         .signInWithEmailAndPassword(email, password)
         .then((uid) => {
-           firebase
+          firebase
             .firestore()
             .collection("users")
             .doc(uid.user.uid)
             .get()
             .then((doc) => { 
-               if (doc.data().job === "hall") {
+              if (doc.data().job === "hall") {
                 history.push("/newRequest");
               } else {
                 history.push("/ordersReceived");
