@@ -1,8 +1,8 @@
-.form-register{
+.form-register {
   display: flex;
   flex-flow: wrap;
 }
-.input-text{
+.input-text {
   border: solid 1.5px #3c2415;
   border-radius: 40px;
   box-sizing: border-box;
@@ -15,51 +15,62 @@
   margin-top: 20px;
   outline: none;
 }
-.btn-register{
+.btn-register {
   font-size: 12px;
   height: 24px;
   margin: 16px 38px 3px 33px;
   width: 50vw;
-  background-color: #CC1900;
+  background-color: #cc1900;
   border: none;
   border-radius: 13px;
   color: #fff;
   outline: none;
   cursor: pointer;
 }
-.chef-kitchen, .img-hall{
+.chef-kitchen,
+.img-hall {
   width: 39px;
   height: 32px;
   margin: 11px;
   display: flex;
 }
-.btn-radio-hall{
+.btn-radio-hall {
   margin-left: 36px;
   cursor: pointer;
 }
-.btn-radio-kitchen{
+.btn-radio-kitchen {
   margin-left: 17px;
   cursor: pointer;
 }
-.label-kitchen, .label-hall{
+.label-kitchen,
+.label-hall {
   font-weight: bold;
   font-size: 15px;
   align-self: center;
   font-weight: bold;
 }
-.label-hall{
+.label-hall {
   font-size: 15px;
-} 
-.select-type{
+}
+.select-type {
   display: flex;
   align-items: center;
 }
-.select-type-two{
+.select-type-two {
   display: flex;
   align-items: center;
 }
-@media (min-width:750px) {
-  .input-text{
+.eyes {
+  position: absolute;
+  margin-top: 3%;
+  margin-left: -4%;
+}
+.eyes:hover {
+  color: #00fcb6;
+  cursor: pointer;
+}
+@media (min-width: 750px) {
+  .input-text {
     border: solid 1.5px #3c2415;
     border-radius: 40px;
     box-sizing: border-box;
@@ -72,8 +83,8 @@
     margin-top: 27px;
     margin-left: 26px;
   }
-  .btn-register{
-    background-color: #CC1900;
+  .btn-register {
+    background-color: #cc1900;
     border: none;
     border-radius: 40px;
     color: #fff;
@@ -84,58 +95,73 @@
     margin-left: 112px;
     width: 50%;
   }
-  .chef-kitchen, .img-hall{
+  .chef-kitchen,
+  .img-hall {
     width: 73px;
     height: 61px;
     margin: 0px;
     display: flex;
   }
-  input[type=radio] {
+  input[type="radio"] {
     width: 40px;
     height: 25px;
   }
-  .btn-radio-hall{
+  .btn-radio-hall {
     margin-left: 44px;
-  }  
-  .label-kitchen, .label-hall{
+  }
+  .label-kitchen,
+  .label-hall {
     font-size: 29px;
     align-self: center;
     margin-left: 29px;
     font-weight: bold;
   }
-  .label-hall{
+  .label-hall {
     font-size: 31px;
-  } 
-  .select-type, .select-type-two{
+  }
+  .select-type,
+  .select-type-two {
     display: flex;
     align-items: center;
     margin-left: 87px;
     margin-top: 31px;
   }
-  .select-type-two{
+  .select-type-two {
     margin-top: 14px;
     margin-left: 87px;
   }
+  .eye1 {
+    position: absolute;
+    margin-top: 9.3%;
+    margin-left: 54%;
+  }
+  .eye2 {
+    position: absolute;
+    margin-top: 13.2%;
+    margin-left: 54%;
+  } 
 }
-@media (min-width:1200px) {
-  .input-text{
+@media (min-width: 1200px) {
+  .input-text {
     box-shadow: 6px 4px 4px rgba(216, 84, 84, 0.308);
     margin-left: 37px;
     margin-top: 9px;
     height: 41px;
   }
-  .btn-register{
+  .btn-register {
     margin-left: 194px;
     margin-top: 13px;
     width: 50%;
     height: 31px;
     font-size: 19px;
   }
-  .select-type, .select-type-two{
+  .select-type,
+  .select-type-two {
     margin-left: 86px;
     margin-top: 15px;
   }
-  .label-kitchen,.label-hall{
+  .label-kitchen,
+  .label-hall {
     font-size: 17px;
   }
 }
