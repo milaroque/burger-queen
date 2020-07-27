@@ -91,9 +91,9 @@ return (
         <Input type="name" id="name" class="input-text" value={name} onChange={e => setName(e.target.value)} placeholder="Nome e Sobrenome" />
         <Input type="email" id="email" class="input-text" value={email} onChange={e => setEmail(e.target.value)} placeholder="Digite seu email" />
         <Input type={passwordShownn ? "text" : "password"} id="password" class="input-text" value={password} onChange={e => setPassword(e.target.value)} placeholder="Digite sua senha" />
-        <span className="eye1 eyes" onClick={togglePasswordVisiblityy}>{eye}</span>
+        <span className="eye1 " onClick={togglePasswordVisiblityy}>{eye}</span>
         <Input type={passwordShownn ? "text" : "password"} id="passwordConfirm" class="input-text" value={passwordConfirm} onChange={e => setPasswordConfirm(e.target.value)} placeholder="Confirme a sua senha" />
-        <span className="eye2 eyes" onClick={togglePasswordVisiblityy}></span>
+        <span className="eye" onClick={togglePasswordVisiblityy}></span>
         <div className='select-type'>
           <Image src={chef} alt='img-chef' class='chef-kitchen'/>
           <label htmlFor='cozinha' className='label-kitchen'>COZINHA</label>
