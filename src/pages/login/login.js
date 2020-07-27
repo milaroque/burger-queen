@@ -1,10 +1,3 @@
-import React, { useState } from "react";
-import Button from "../../components/button/Button";
-import Input from "../../components/input/Input";
-import Image from "../../components/image/image";
-import logo from "../../assets/logo.png";
-import Modal from "../../components/modal/modal";
-import Register from "../register/register";
 import firebase from "../../config/firebase.js";
 import "firebase/firebase-auth";
 import "firebase/firebase-firestore";
@@ -54,7 +47,7 @@ const Login = () => {
               } else {
                 history.push("/ordersReceived");
               }
-            });
+            })
         })
         .catch(function (error) {
           if (authErrors[error.code]) {
