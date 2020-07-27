@@ -7,10 +7,7 @@ import "firebase/firebase-firestore";
 
 const ordersReceived = () => {
     return (
-        <div link='/ordersReceived'>
-        <Link to="/ordersReceived">
-     Pedidos Recebidos
-   </Link>
+        <div>
        <div>Página da Cozinha</div>
        <div>
        <Link to='/'>
