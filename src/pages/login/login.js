@@ -100,6 +100,7 @@ const Login = () => {
             name="Entrar"
             onClick={signIn}
           />
+          </form>
           <p onClick={() => setIsModalVisible(true)}>
             Ainda não tem cadastro? Registre-se aqui!
           </p>
@@ -108,7 +109,6 @@ const Login = () => {
               <Register />
             </Modal>
           ) : null}
-        </form>
       </div>
     </div>
   );
