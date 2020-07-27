@@ -10,15 +10,23 @@ import firebase from '../../config/firebase.js'
 import "firebase/firebase-auth";
 import "firebase/firebase-firestore";
 import './register.css'
+import authErrors from '../../config/errorsfirebase';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 const Register = () => {
-
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [job, setJob] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const history = useHistory();
+  const eye = <FontAwesomeIcon icon={faEye} />;
+  const [passwordShownn, setPasswordShownn] = useState(false);
+  
+  const togglePasswordVisiblityy = () => {
+  setPasswordShownn(passwordShownn ? false : true);
+};
   
 const registerLogin = () => {
   if (!name || !email || !job || !password) {
@@ -58,20 +66,15 @@ const registerLogin = () => {
         );
     })
     .catch((error) => {
-      if (error.code === 'auth/invalid-email') {
+      if (authErrors[error.code]) {
         Swal.fire({
-          text: 'Email inválido',
-          icon: 'warning',
+          text: authErrors[error.code],
+          icon: "warning",
         });
-      } else if (error.code === 'auth/weak-password') {
+      }else {
         Swal.fire({
-          text: 'Senha deve conter no mínino 6 caracteres',
-          icon: 'warning',
-        });
-      } else if (error.code === 'auth/email-already-in-use') {
-        Swal.fire({
-          text: 'Usuário já cadastrado',
-          icon: 'warning',
+          text: error,
+          icon: "warning",
         });
       }
   });
@@ -84,12 +87,13 @@ const createUser = (event) => {
 }
 
 return (
-    <div className='form-register'>
+    <form className='form-register'>
         <Input type="name" id="name" class="input-text" value={name} onChange={e => setName(e.target.value)} placeholder="Nome e Sobrenome" />
         <Input type="email" id="email" class="input-text" value={email} onChange={e => setEmail(e.target.value)} placeholder="Digite seu email" />
-        <Input type="password" id="password" class="input-text" value={password} onChange={e => setPassword(e.target.value)} placeholder="Digite sua senha" />
-        <Input type="password" id="passwordConfirm" class="input-text" value={passwordConfirm} onChange={e => setPasswordConfirm(e.target.value)} placeholder="Confirme a sua senha" />
-        <Button id="register" class="btn-register" type='submit' onClick={createUser} name="Registrar" />
+        <Input type={passwordShownn ? "text" : "password"} id="password" class="input-text" value={password} onChange={e => setPassword(e.target.value)} placeholder="Digite sua senha" />
+        <span className="eye1 eyes" onClick={togglePasswordVisiblityy}>{eye}</span>
+        <Input type={passwordShownn ? "text" : "password"} id="passwordConfirm" class="input-text" value={passwordConfirm} onChange={e => setPasswordConfirm(e.target.value)} placeholder="Confirme a sua senha" />
+        <span className="eye2 eyes" onClick={togglePasswordVisiblityy}></span>
         <div className='select-type'>
           <Image src={chef} alt='img-chef' class='chef-kitchen'/>
           <label htmlFor='cozinha' className='label-kitchen'>COZINHA</label>
@@ -100,7 +104,8 @@ return (
             <label htmlFor='salao' className='label-hall'>SALÃO</label>
             <Input type='radio' class='btn-radio-hall' name='job' value='hall' onChange={e => setJob(e.target.value)} id='hall' />
           </div>
-    </div>
+          <Button id="register" class="btn-register" type='submit' onClick={createUser} name="Registrar" />
+    </form>
 
 )
 

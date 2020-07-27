@@ -32,6 +32,15 @@ img{
   cursor: pointer;
   outline: none;
 }
+.eye {
+  position: absolute;
+  top: 65%;
+  right: 10%;
+}
+.eye:hover {
+  color: #00fcb6;
+  cursor: pointer;
+}
 p{
   width: 100vw;
   display: flex;
@@ -61,6 +70,11 @@ p{
     height: 65px;
     margin: 28px 106px;
     width: 80vw;
+  }
+  .eye {
+    position: absolute;
+    top: 65.5%;
+    right: 7%;
   }
   p{
     font-size: 30px;
@@ -104,4 +118,8 @@ p{
   .select-form{
     align-self: center;
   }
+  .eye {
+    top: 42.5%;
+    right: 10%;
+}
 }
