@@ -11,12 +11,21 @@ import "firebase/firebase-firestore";
 import Swal from "sweetalert2";
 import { useHistory } from "react-router-dom";
 import "./login.css";
+import authErrors from "../../config/errorsfirebase";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 const Login = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordShown, setPasswordShown] = useState(false);
   const history = useHistory();
+  const eyes = <FontAwesomeIcon icon={faEye} />;
+
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(passwordShown ? false : true);
+  };
 
   const loginUser = () => {
     if (!email) {
@@ -48,14 +57,9 @@ const Login = () => {
             });
         })
         .catch(function (error) {
-          if (error.code === "auth/user-not-found") {
+          if (authErrors[error.code]) {
             Swal.fire({
-              text: "Usuário não encontrado",
-              icon: "warning",
-            });
-          } else if (error.code === "auth/wrong-password") {
-            Swal.fire({
-              text: "Senha inválida",
+              text: authErrors[error.code],
               icon: "warning",
             });
           } else {
@@ -89,13 +93,14 @@ const Login = () => {
             placeholder="Digite seu email"
           />
           <Input
-            type="password"
+            type={passwordShown ? "text" : "password"}
             id="password"
             class="input-login"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Digite sua senha"
           />
+          <i className="eye" onClick={togglePasswordVisiblity}>{eyes}</i>
           <Button
             id="login"
             class="button-loggin"
@@ -105,12 +110,13 @@ const Login = () => {
           <p onClick={() => setIsModalVisible(true)}>
             Ainda não tem cadastro? Registre-se aqui!
           </p>
+          </form>
           {isModalVisible ? (
             <Modal onClose={() => setIsModalVisible(false)}>
               <Register />
             </Modal>
           ) : null}
-        </form>
+        
       </div>
     </div>
   );
