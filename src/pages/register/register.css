@@ -66,10 +66,17 @@
   margin-top: 3%;
   margin-left: -4%;
 }
-.eyes:hover {
+.eyes:hover, .eye1:hover {
   color: #00fcb6;
   cursor: pointer;
 }
+.eye1 {
+position: absolute;
+margin-top: 9.5%;
+margin-left: 54%;
+}
+
+
 @media (min-width: 750px) {
   .input-text {
     border: solid 1.5px #3c2415;
@@ -131,16 +138,16 @@
     margin-top: 14px;
     margin-left: 87px;
   }
+ .eye { 
+  position: absolute;
+  top: 65.5%;
+  right: 8%;
+  }
   .eye1 {
     position: absolute;
-    margin-top: 9.3%;
-    margin-left: 54%;
+    margin-top: 26.5%;
+    margin-left: 53%;
   }
-  .eye2 {
-    position: absolute;
-    margin-top: 13.2%;
-    margin-left: 54%;
-  } 
 }
 @media (min-width: 1200px) {
   .input-text {
@@ -165,4 +172,14 @@
   .label-hall {
     font-size: 17px;
   }
+  .eye { 
+    position: absolute;
+    top: 65.5%;
+    right: 8%;
+    }
+    .eye1 {
+      position: absolute;
+      margin-top: 9.4%;
+      margin-left: 54.5%;
+    }
 }
