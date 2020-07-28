@@ -20,6 +20,7 @@ img{
   font-size: 21px;
   outline: none;
 }
+
 .button-loggin{
   font-size: 22px;
   height: 46px;
@@ -82,44 +83,47 @@ p{
   } 
 }
 @media (min-width:1200px) {
-  img{
-    margin: auto;
-    width: 452px;
-    height: 386px;
+    img{
+      margin: auto;
+      width: 452px;
+      height: 386px;
+    }
+    figure{
+      display: flex;
+      width: 50vw;
+      height: 100vh;
+    }
+    .div{
+      display: flex;
+      background: rgba(246, 241, 241, 0.79);
+    }
+    .form-login{
+      width: 50vw;
+      display: flex;
+      width: 60vw;
+      justify-content: center;
+    }
+    .input-login{
+      height: 48px;
+      width: 65%;
+      margin-left: 75px;
+      box-shadow: 6px 14px 10px rgba(216, 84, 84, 0.308);
+    }
+    .button-loggin{
+      width: 38%;
+      height: 40px;
+      font-size: 22px;
+    }
+    p{
+      font-size: 19px;
+    }
+    .select-form{
+      align-self: center;
+    }
+    .eye {
+      display: flex;
+      position: relative;
+      margin-top: 26px;
+    
   }
-  figure{
-    display: flex;
-    width: 50vw;
-    height: 100vh;
-  }
-  .div{
-    display: flex;
-    background: rgba(246, 241, 241, 0.79);
-  }
-  .form-login{
-    width: 50vw;
-    display: flex;
-    width: 60vw;
-    justify-content: center;
-  }
-  .input-login{
-    height: 48px;
-    width: 65%;
-    box-shadow: 6px 14px 10px rgba(216, 84, 84, 0.308);
-  }
-  .button-loggin{
-    width: 38%;
-    height: 40px;
-    font-size: 22px;
-  }
-  p{
-    font-size: 19px;
-  }
-  .select-form{
-    align-self: center;
-  }
-  .eye {
-    top: 42.5%;
-    right: 10%;
-}
 }
