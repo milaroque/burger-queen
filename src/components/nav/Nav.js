@@ -5,27 +5,28 @@ import logo from "../../assets/logo.png";
 import menu from "../../assets/menuhamburguer.png"
 import exit from "../../assets/exit.png"
 import Button from "../button/Button"
-import firebase from "../config/firebase.js";
+import firebase from "../../config/firebase.js";
 import "firebase/firebase-auth";
+import "./nav.css";
 
 
 const Nav = () => {
   return (
-    <nav>
+    <nav className="menu-buguer">
       <div>
-        <Image src={menu} alt="menu" className="menu-hamburguer" />
+        <Image src={menu} alt="menu" class="menu-hamburguer" />
       </div>
       <div>
-        <Image src={logo} alt="logo-nav" className="logo-nav" />
+        <Image src={logo} alt="logo-nav" class="logo-nav" />
       </div>
       <div>
         <Link to='/'>
-          <Button
+          <button
             id="exit"
             className="btn-exit"
             onClick={() => firebase.auth().signOut()}>
-            <Image src={exit} alt="exit" className="exit-login" />
-          </Button>
+            <Image src={exit} alt="exit" class="exit-login" />
+          </button>
         </Link>
       </div>
     </nav>
