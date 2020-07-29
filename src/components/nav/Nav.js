@@ -4,7 +4,6 @@ import Image from "../../components/image/image";
 import logo from "../../assets/logo.png";
 import menu from "../../assets/menuhamburguer.png"
 import exit from "../../assets/exit.png"
-import Button from "../button/Button"
 import firebase from "../../config/firebase.js";
 import "firebase/firebase-auth";
 import "./nav.css";
@@ -33,4 +32,6 @@ const Nav = () => {
   )
 
 }
+
 export default Nav;
+

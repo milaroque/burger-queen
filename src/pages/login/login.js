@@ -19,13 +19,9 @@ const Login = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [passwordShown, setPasswordShown] = useState(false);
+  const [showPassword, setShowPassword] = useState(false)
   const history = useHistory();
   const eyes = <FontAwesomeIcon icon={faEye} />;
-
-  const togglePasswordVisiblity = () => {
-    setPasswordShown(passwordShown ? false : true);
-  };
 
   const loginUser = () => {
     if (!email) {
@@ -87,23 +83,23 @@ const Login = () => {
           <Input
             type="email"
             id="email"
-            class="input-login"
+            className="input-login"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Digite seu email"
           />
           <Input
-            type={passwordShown ? "text" : "password"}
+            type={showPassword  ? "text" : "password"}
             id="password"
-            class="input-login"
+            className="input-login"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Digite sua senha"
           />
-          <i className="eye" onClick={togglePasswordVisiblity}>{eyes}</i>
+          <i className="eye" onClick={() => setShowPassword(!showPassword)}>{eyes}</i>
           <Button
             id="login"
-            class="button-loggin"
+            className="button-loggin"
             name="Entrar"
             onClick={signIn}
           />
