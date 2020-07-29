@@ -1,39 +1,91 @@
-import React from 'react'
-import { Link } from 'react-router-dom' 
-import Button from '../../components/button/Button'
-import firebase from "../../config/firebase.js";
-import "firebase/firebase-auth";
-import "firebase/firebase-firestore";
+import React, { useEffect, useState } from 'react'
+import Menu from '../../components/menu/menu';
+import getMenu from '../../functions/firebaseRead'
+import Nav from "../../components/nav/Nav";
 
 const NewRequest = () => {
-  const getMenu = () => {
-    firebase
-      .firestore()
-      .collection("menu")
-      .get()
-      .then((snapshot) => {
-      const mymenu = snapshot.docs.filter(docs => docs.data().item).map((doc) => ({
-        id: doc.id,
-        ...doc.data()
-      })
-      )
-       mymenu.map((item) => console.log(item.item, item.price))
-      });
-  
-}  
-    return (
-        <div>
-        <Button name='MENU'
-          onClick={getMenu}/>
-            <div>Página do Salão</div>
-            <div>
-      <Link to='/'>
-        <Button name='SAIR'
-          onClick={() => firebase.auth().signOut()}/>
-        </Link>
+const [breakfast, setBreakfast] = useState([])
+const [hamburger, setHamburger] = useState([])
+const [sideDishes, setSideDishes] = useState([])
+const [drinks, setDrinks] = useState([])
+
+
+useEffect(() => {
+    getMenu().then(([breakfast, hamburger, sideDishes, drinks]) => {
+
+      setBreakfast(breakfast)
+      setHamburger(hamburger)
+      setSideDishes(sideDishes)
+      setDrinks(drinks)
+    })
+
+  }, []) //eslint-disable-line
+
+      return (
+    <main>
+        <div link='/newRequest'>
+       <Nav>
+         
+       </Nav>
       </div>
-        </div>
-    )
+    <section>
+      <div>MENU</div>
+      <div>Café da Manhã</div> {
+                (
+                  breakfast.map(item => (
+                    <Menu name={`${item.item} `}
+                    price={`R$${item.price}`}
+                    value={item.id}
+                    key={item.id}
+                    src={item.icon}
+                    className='image'
+                  />
+                  ))
+                ) 
+            } </section>
+            <section>
+      <div>Hamburgers</div> {
+                (
+                  hamburger.map(item => (
+                    <Menu name={`${item.item} `}
+                    price={`R$${item.price}`}
+                    value={item.id}
+                    key={item.id}
+                    src={item.icon}
+                  />
+                  ))
+                ) 
+            } </section>
+            <section>
+      <div>Acompanhamentos</div> {
+                (
+                  sideDishes.map(item => (
+                    <Menu name={`${item.item} `}
+                    price={`R$${item.price}`}
+                    value={item.id}
+                    key={item.id}
+                    src={item.icon}
+                  />
+                  ))
+                ) 
+            } </section>
+            <section>
+      <div>Bebidas</div> {
+                (
+                  drinks.map(item => (
+                    <Menu name={`${item.item} `}
+                    price={`R$${item.price}`}
+                    value={item.id}
+                    key={item.id}
+                    src={item.icon}
+                  />
+                  ))
+                ) 
+            } </section>
+            
+      </main>
+  
+    ) 
 }
 
 export default NewRequest
