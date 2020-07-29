@@ -1,6 +1,7 @@
 .form-register {
   display: flex;
   flex-flow: wrap;
+  position: relative;
 }
 .input-text {
   border: solid 1.5px #3c2415;
@@ -53,6 +54,7 @@
   font-size: 15px;
 } 
 .select-type {
+  margin-left: 20px;
   display: flex;
   align-items: center;
 }
@@ -63,123 +65,14 @@
 }
 .eyes {
   position: absolute;
-  margin-top: 3%;
-  margin-left: -4%;
+  right: 28px;
+  top: 99px;
 }
-.eyes:hover, .eye1:hover {
-  color: #00fcb6;
+.eyes:hover {
+  color: #d13f34;
   cursor: pointer;
 }
-.eye1 {
-position: absolute;
-margin-top: 9.5%;
-margin-left: 54%;
+@media (max-width: 800px) {
+  
 }
 
-
-@media (min-width: 750px) {
-  .input-text {
-    border: solid 1.5px #3c2415;
-    border-radius: 40px;
-    box-sizing: border-box;
-    box-shadow: 6px 15px 8px rgba(216, 84, 84, 0.308);
-    font-size: 20px;
-    height: 50px;
-    padding-left: 20px;
-    width: 90;
-    width: 90%;
-    margin-top: 27px;
-    margin-left: 26px;
-  }
-  .btn-register {
-    background-color: #cc1900;
-    border: none;
-    border-radius: 40px;
-    color: #fff;
-    font-size: 25px;
-    font-weight: 700;
-    height: 50px;
-    margin-top: 43px;
-    margin-left: 112px;
-    width: 50%;
-  }
-  .chef-kitchen,
-  .img-hall {
-    width: 73px;
-    height: 61px;
-    margin: 0px;
-    display: flex;
-  }
-  input[type="radio"] {
-    width: 40px;
-    height: 25px;
-  }
-  .btn-radio-hall {
-    margin-left: 44px;
-  }
-  .label-kitchen,
-  .label-hall {
-    font-size: 29px;
-    align-self: center;
-    margin-left: 29px;
-    font-weight: bold;
-  }
-  .label-hall {
-    font-size: 31px;
-  }
-  .select-type,
-  .select-type-two {
-    display: flex;
-    align-items: center;
-    margin-left: 87px;
-    margin-top: 31px;
-  }
-  .select-type-two {
-    margin-top: 14px;
-    margin-left: 87px;
-  }
- .eye { 
-  position: absolute;
-  top: 65.5%;
-  right: 8%;
-  }
-  .eye1 {
-    position: absolute;
-    margin-top: 26.5%;
-    margin-left: 53%;
-  }
-}
-@media (min-width: 1200px) {
-  .input-text {
-    box-shadow: 6px 4px 4px rgba(216, 84, 84, 0.308);
-    margin-left: 37px;
-    margin-top: 9px;
-    height: 41px;
-  }
-  .btn-register {
-    margin-left: 194px;
-    margin-top: 13px;
-    width: 50%;
-    height: 31px;
-    font-size: 19px;
-  }
-  .select-type,
-  .select-type-two {
-    margin-left: 86px;
-    margin-top: 15px;
-  }
-  .label-kitchen,
-  .label-hall {
-    font-size: 17px;
-  }
-  .eye { 
-    position: absolute;
-    top: 65.5%;
-    right: 8%;
-    }
-    .eye1 {
-      position: absolute;
-      margin-top: 9.4%;
-      margin-left: 54.5%;
-    }
-}

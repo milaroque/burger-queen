@@ -4,36 +4,17 @@ import Button from '../../components/button/Button'
 import firebase from "../../config/firebase.js";
 import "firebase/firebase-auth";
 import "firebase/firebase-firestore";
+import Nav from "../../components/nav/Nav";
 
-const NewRequest = () => {
-  const getMenu = () => {
-    firebase
-      .firestore()
-      .collection("menu")
-      .get()
-      .then((snapshot) => {
-      const mymenu = snapshot.docs.filter(docs => docs.data().item).map((doc) => ({
-        id: doc.id,
-        ...doc.data()
-      })
-      )
-       mymenu.map((item) => console.log(item.item, item.price))
-      });
-  
-}  
-    return (
-        <div>
-        <Button name='MENU'
-          onClick={getMenu}/>
-            <div>Página do Salão</div>
-            <div>
-      <Link to='/'>
-        <Button name='SAIR'
-          onClick={() => firebase.auth().signOut()}/>
-        </Link>
-      </div>
-        </div>
-    )
+
+const newRequest = () => {
+  return (
+    <div link='/newRequest'>
+      <Nav>
+        Salão
+      </Nav>
+    </div>
+  )
 }
 
 export default NewRequest
