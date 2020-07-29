@@ -4,22 +4,16 @@ import Button from '../../components/button/Button';
 import firebase from "../../config/firebase.js";
 import "firebase/firebase-auth";
 import "firebase/firebase-firestore";
+import Nav from "../../components/nav/Nav";
 
 const ordersReceived = () => {
-    return (
-        <div link='/ordersReceived'>
-        <Link to="/ordersReceived">
-     Pedidos Recebidos
-   </Link>
-       <div>Página da Cozinha</div>
-       <div>
-       <Link to='/'>
-        <Button name='SAIR'
-          handleClick={() => firebase.auth().signOut()}/>
-        </Link>
+    return(
+      <div link='/newRequest'>
+        <Nav>
+            Cozinha
+        </Nav>
       </div>
-   </div>
     )
-}
+  }
 
 export default ordersReceived;

@@ -11,7 +11,7 @@ const newRequest = () => {
   return (
     <div link='/newRequest'>
       <Nav>
-        Novo Pedido
+        Salão
       </Nav>
     </div>
   )

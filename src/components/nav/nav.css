@@ -11,8 +11,10 @@
 }
 .logo-nav{
     max-width: 150px;
-    /* width: 100px; */
     height: 100px;
+}
+.btn-exit{
+    margin-right: 10px;
 }
 .menu-buguer{
     width: 100%;
@@ -28,9 +30,10 @@
     color: #fff !important;
 }
 @media (max-width: 800px) {
-    .exit-login{
-        
+    .exit-login, .menu-hamburguer, .logo-nav{
+        margin: 0px;
     }
+    
 
 }
 
