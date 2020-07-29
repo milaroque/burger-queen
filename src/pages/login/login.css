@@ -1,91 +1,11 @@
 * {
-margin: 0;
-padding: 0;
-}
-img{
-  width: 100vw;
-  display: flex;
-  margin-bottom: 27px;
-  margin-top: 15px;
-}
-.input-login{
-  border: solid 1.5px #3c2415;
-  border-radius: 40px;
-  box-sizing: border-box;
-  box-shadow: 3px 21px 13px rgba(216, 84, 84, 0.308);
-  height: 49px;
-  margin: 8px 20px 23px 27px;
-  padding-left: 28px;
-  width: 90vw;
-  font-size: 21px;
-  outline: none;
-}
-.button-loggin{
-  font-size: 22px;
-  height: 46px;
-  margin: 19px 91px;
-  width: 50vw;
-  background-color: #CC1900;
-  border: none;
-  border-radius: 40px;
-  color: #fff;
-  cursor: pointer;
-  outline: none;
-}
-.eye {
-  position: absolute;
-  top: 65%;
-  right: 10%;
-}
-.eye:hover {
-  color: #00fcb6;
-  cursor: pointer;
-}
-p{
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  font-size: 14px;
-  margin-top: 8px;
-  color: #565555;
-  cursor: pointer;
-}
-.form-login{
-  display: flex;
-  flex-flow: wrap;
-}
-@media (min-width:750px) {
-  img {
-    width: 80vw;
-    margin-left: 80px;
+  margin: 0;
+  padding: 0;
   }
-  .input-login {
-    height: 78px;
-    margin: 10px 10px 31px 43px;
-    font-size: 25px;
-    box-shadow: 6px 26px 10px rgba(216, 84, 84, 0.308);
-  }
-  .button-loggin{
-    font-size: 40px;
-    height: 65px;
-    margin: 28px 106px;
-    width: 80vw;
-  }
-  .eye {
-    position: absolute;
-    top: 65.5%;
-    right: 7%;
-  }
-  p{
-    font-size: 30px;
-    margin-top: 36px;
-  } 
-}
-@media (min-width:1200px) {
   img{
     margin: auto;
-    width: 452px;
-    height: 386px;
+    width: 80%;
+    height: 430px;
   }
   figure{
     display: flex;
@@ -96,30 +16,79 @@ p{
     display: flex;
     background: rgba(246, 241, 241, 0.79);
   }
-  .form-login{
-    width: 50vw;
-    display: flex;
-    width: 60vw;
-    justify-content: center;
-  }
   .input-login{
-    height: 48px;
-    width: 65%;
-    box-shadow: 6px 14px 10px rgba(216, 84, 84, 0.308);
+    margin: 16px 0px 30px 93px;
+    display: block;
+    border: solid 1.5px #3c2415;
+    border-radius: 40px;
+    box-sizing: border-box;
+    box-shadow: 3px 21px 13px rgba(216, 84, 84, 0.308);
+    height: 43px;
+    padding-left: 28px;
+    width: 70%;
+    font-size: 21px;
+    outline: none;
   }
+  
   .button-loggin{
-    width: 38%;
-    height: 40px;
     font-size: 22px;
-  }
-  p{
-    font-size: 19px;
-  }
-  .select-form{
-    align-self: center;
+    height: 34px;
+    width: 50%;
+    background-color: #CC1900;
+    border: none;
+    border-radius: 40px;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
   }
   .eye {
-    top: 42.5%;
+    position: absolute;
+    top: 49%;
     right: 10%;
-}
-}
+  }
+  .eye:hover {
+    color: #00fcb6;
+    cursor: pointer;
+  }
+  p{
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    margin-top: 8px;
+    color: #565555;
+    cursor: pointer;
+  }
+  .form-login{
+    display: inline-block;
+    align-self: center;
+    text-align: center;
+  }
+  .select-form{
+    display: contents;
+  }
+  
+  @media (max-width: 800px) {
+    img{
+      margin: 0px;
+      width: 100vw;
+      height: auto;
+  
+    }
+    figure{
+      width: 50vw;
+      height: 50vh;
+    }
+    .div{
+      flex-direction: column;
+      align-items: center;
+    }
+    .input-login{
+      margin: 14px 0px 30px 0px;
+      
+    }
+    .form-login{
+      display: contents;
+    }
+      
+    }
