@@ -8,7 +8,8 @@ const ordersReceived = () => {
           Cozinha
       </Nav>
     </div>
+
     )
-}
+  }
 
 export default ordersReceived;
