@@ -1,4 +1,35 @@
+button{
+width: 148px;
+height: 86px;
+background: #D9D9D9;
+border-radius: 20px;
+outline: none;
+cursor:pointer;
+}
 .imagem{
-    width: 30px;
-    height: 30px;
+width: 30px;
+height: 30px;
+}
+.name{
+
+width: 113px;
+height: 19px;
+font-family: Fira Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+color: #000000;
+}
+.price{
+
+width: 27px;
+height: 19px;
+font-family: Fira Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+color: #000000;
+
 }
