@@ -71,25 +71,43 @@
   @media (max-width: 800px) {
     img{
       margin: 0px;
-      width: 100vw;
+      width: 80vw;
       height: auto;
   
     }
     figure{
-      width: 50vw;
-      height: 50vh;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 50vh;
     }
     .div{
       flex-direction: column;
       align-items: center;
+      width: 100vw;
+      height: 100vh;
     }
     .input-login{
-      margin: 14px 0px 30px 0px;
+      margin: 22px 0px 19px 0px;
+      height: 60px;
+      width: 75%;
       
     }
     .form-login{
       display: contents;
     }
-      
+    .eye{
+    top: 64%;
+    right: 18%;
+    }
+    .button-loggin{
+      margin-top: 30px;
+        height: 57px;
+        width: 52%;
+    }
+    p{
+      font-size: 20px;
+    margin-top: 30px;
+    }
 }
 
