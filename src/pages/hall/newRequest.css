@@ -39,7 +39,7 @@
 }
 @media (min-width: 640px) and (max-width: 1024px) {
   .header-hall{
-    height: 100%;
+    height: 9vw;
   }
   .breakfast, .burgers, .drinks, .sidedishes{
     width: 23vw;
