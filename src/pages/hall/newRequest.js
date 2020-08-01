@@ -23,68 +23,67 @@ const NewRequest = () => {
   }, []) //eslint-disable-line
 
   return (
-    <main>
-      <div link='/newRequest'>
-        <Nav>
+    <header className="hall">
+      <Nav link='/newRequest'>
 
-        </Nav>
-      </div>
-      <section className="menu">
-        <div className="header-hall">Novo Pedido</div>
-        <div className="header-hall">Café da Manhã</div> {
-          (
-            breakfast.map(item => (
-              <Menu name={`${item.item} `}
-                price={`R$${item.price}`}
-                value={item.id}
-                key={item.id}
-                src={item.icon}
-                className='image'
-              />
-            ))
-          )
-        } </section>
-      <section>
-        <div>Hamburgers</div> {
-          (
-            hamburger.map(item => (
-              <Menu name={`${item.item} `}
-                price={`R$${item.price}`}
-                value={item.id}
-                key={item.id}
-                src={item.icon}
-              />
-            ))
-          )
-        } </section>
-      <section>
-        <div>Acompanhamentos</div> {
-          (
-            sideDishes.map(item => (
-              <Menu name={`${item.item} `}
-                price={`R$${item.price}`}
-                value={item.id}
-                key={item.id}
-                src={item.icon}
-              />
-            ))
-          )
-        } </section>
-      <section>
-        <div>Bebidas</div> {
-          (
-            drinks.map(item => (
-              <Menu name={`${item.item} `}
-                price={`R$${item.price}`}
-                value={item.id}
-                key={item.id}
-                src={item.icon}
-              />
-            ))
-          )
-        } </section>
-
-    </main>
+      </Nav>
+      <header className="header-hall"> Novo Pedido </header>
+      <main className="menu">
+        <section className="breakfast-menu">
+          <div className="breakfast"> Café da Manhã </div> {
+            (
+              breakfast.map(item => (
+                <Menu name={`${item.item} `}
+                  price={`R$${item.price}`}
+                  value={item.id}
+                  key={item.id}
+                  src={item.icon}
+                  className='image'
+                />
+              ))
+            )
+          } </section>
+        <section className="burges-menu">
+          <div className="burgers">Hamburgers</div> {
+            (
+              hamburger.map(item => (
+                <Menu name={`${item.item} `}
+                  price={`R$${item.price}`}
+                  value={item.id}
+                  key={item.id}
+                  src={item.icon}
+                />
+              ))
+            )
+          } </section>
+        <section className="menu-sidedishes">
+          <div className="sidedishes">Acompanhamentos</div> {
+            (
+              sideDishes.map(item => (
+                <Menu name={`${item.item} `}
+                  price={`R$${item.price}`}
+                  value={item.id}
+                  key={item.id}
+                  src={item.icon}
+                />
+              ))
+            )
+          } </section>
+        <section className="menu-drinks">
+          <div className="drinks">Bebidas</div> {
+            (
+              drinks.map(item => (
+                <Menu name={`${item.item} `}
+                  price={`R$${item.price}`}
+                  value={item.id}
+                  key={item.id}
+                  src={item.icon}
+                />
+              ))
+            )
+          } </section>
+      </main>
+    </header>
 
   )
 

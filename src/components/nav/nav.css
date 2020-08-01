@@ -1,37 +1,46 @@
 .menu-hamburguer{
     max-width: 38px;
-    width: 100%;
-    height: 20px;
+    width: 100vw;
+    height: 3vh;
     padding-left: 10px; 
 }
 .exit-login{
     max-width: 50px;
-    width: 100px;
+    width: 100vw;
     height: 40px;
 }
 .logo-nav{
-    max-width: 150px;
-    height: 100px;
+    max-width: 7em;
+    height: 12vh;
+    
 }
 .btn-exit{
     margin-right: 10px;
+    width: 5vw;
+    height: 7vh;
+    border: none;
+    border-radius: 0px;
+    background-color: #fff !important;
 }
 .menu-buguer{
     width: 100%;
+    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background-color: rgba(246, 241, 241, 0.79);
-    border-bottom: 1px solid rgba(216, 84, 84, 0.308);
-    color: #fff !important;
+    background-color: #fff !important;
+    border-bottom: 1px solid rgba(216, 84, 84, 0.308); 
+    
 }
 @media (max-width: 800px) {
-    .exit-login, .menu-hamburguer, .logo-nav{
-        margin: 0px;
+    .logo-nav{
+        height: 11vh;
+    }
+    .btn-exit{
+        padding-right: 52px;
     }
     
 
