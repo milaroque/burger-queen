@@ -19,8 +19,8 @@ const NewRequest = () => {
   const [add, setAdd] = useState([]);
   const [order, setOrder] = useState([]);
   const [subTotal, setSubTotal] = useState([])
-  const [client, setClient] = useState([''])
-  const [table, setTable] = useState([''])
+  const [client, setClient] = useState('')
+  const [table, setTable] = useState('')
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   useEffect(() => {
@@ -70,8 +70,8 @@ useEffect(() => {
   total()
 }, [order])
 
-const saveOrderFirebase = (client, table, order) => {
-  if(!client || !table || !order) {
+const saveOrderFirebase = (client, table) => {
+  if(!client || !table) {
     Swal.fire({
       text: 'Preencha o nome do cliente, número da mesa e adicione o pedido',
       icon: 'warning'
@@ -82,8 +82,17 @@ const saveOrderFirebase = (client, table, order) => {
       leadTime: '-',
       client,
       table,
-      order,
-      status: 'Em preparação'
+      order: order.map((item) => {
+        return {
+          id: item.id,
+          item: item.item,
+          price: item.price,
+          options: item.options || null,
+          extras: item.extras || null
+        }
+      }),
+      status: 'Em preparação',
+      subTotal
     })
     .then((doc) => firebase.firestore().collection('orders').doc(doc.id)
     .update({id: doc.id}),
@@ -180,7 +189,7 @@ const saveOrderFirebase = (client, table, order) => {
         />
         <div>SubTotal R${subTotal}</div>
       </section>
-      <Button name='ENVIAR PEDIDO' onClick={() => saveOrderFirebase(client, table, order)}/>
+      <Button name='ENVIAR PEDIDO' onClick={() => saveOrderFirebase(client, table)}/>
       <Button name='CANCELAR'/>
     </main>
   );
