@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 import firebase from "../../config/firebase";
 import "firebase/firebase-firestore";
 import Input from "../../components/input/Input";
+import "./newRequest.css"
 
 const NewRequest = () => {
   const [breakfast, setBreakfast] = useState([]);
