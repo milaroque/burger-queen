@@ -9,33 +9,35 @@
   border: solid 1.5px #3c2415;
   border-radius: 40px;
   box-sizing: border-box;
-  box-shadow: 9px 5px 9px rgba(216, 84, 84, 0.308);
-  font-size: 10px;
-  height: 4vh;
+  box-shadow: 9px 12px 12px rgba(216, 84, 84, 0.308);
+  font-size: 20px;
+  height: 5vh;
   padding-left: 20px;
   width: 47vw;
   margin-left: 15px;
-  margin-top: 33px;
+  margin-top: 20px;
   outline: none;
 }
+
 .btn-register {
-  font-size: 12px;
-  height: 2vw;
-  margin: 12px 38px 3px 33px;
-  width: 32vw;
-  background-color: #cc1900;
-  border: none;
-  border-radius: 35px;
-  color: #fff;
-  outline: none;
-  cursor: pointer;
+  font-size: 18px;
+    height: 2.5vw;
+    margin: 0px 38px 3px 33px;
+    width: 20vw;
+    background-color: #cc1900;
+    border: none;
+    border-radius: 35px;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    margin-top: 40px;
 }
 .chef-kitchen,
 .img-hall {
   width: 4vw;
-  height: 5vh;
-  margin: 11px;
-  display: flex;
+    height: 6vh;
+    margin: 14px;
+    display: flex;
 }
 .btn-radio-hall, .btn-radio-kitchen{
   margin-left: 36px;
@@ -46,13 +48,12 @@
 }
 .label-kitchen,
 .label-hall {
-  font-weight: bold;
-  font-size: 15px;
+  font-size: 20px;
   align-self: center;
   font-weight: bold;
 }
 .label-hall {
-  font-size: 15px;
+  font-size: 20px;
 } 
 .select-type {
   width: 100vw;
@@ -72,31 +73,63 @@
   width: 1vw;
   position: absolute;
   right: 110px;
-  top: 93px;
+  top: 77px;
 }
 .eyes:hover {
   color: #d13f34;
   cursor: pointer;
 }
-@media (max-width: 800px) {
+@media (min-width: 640px) and (max-width: 1024px) {
   .input-text{
     margin-top: 23px;
+    font-size: 21px;
+  }
+  .chef-kitchen, .img-hall{
+    width: 11vw;
+    height: 7vh;
+  }
+  .btn-register{
+    font-size: 25px;
+    margin-top: 25px;
+    height: 4vh;
+    margin-left: 48px;
+  }
+  .eyes{
+    right: 69px;
+    top: 186px;
+  }
+  .form-register{
+    width: 57vw;
+    height: 46vh;
+  }
+  .label-kitchen, .label-hall{
+    font-size: 22px;
+  }
+}
+@media (max-width: 380px){
+  .input-text{
+    margin-top: 25px;
+    font-size: 12px;
   }
   .chef-kitchen, .img-hall{
     width: 9vw;
     height: 5vh;
   }
   .btn-register{
-    margin-top: 20px;
+    font-size: 13px;
     height: 4vh;
     margin-left: 48px;
   }
   .eyes{
-    right: 69px;
-    top: 97px;
+    right: 26px;
+    margin-top: 27px;
   }
   .form-register{
-    width: 56vw;
+    width: 54vw;
   }
+  .label-kitchen, .label-hall{
+    font-size: 15px;
+  }
+
 }
 

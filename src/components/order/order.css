@@ -1,0 +1,23 @@
+ .items{
+    width: 302px;
+height: 44px;
+
+background: #FFFDFD;
+border: 1px solid #000000;
+box-sizing: border-box;
+} 
+.btn-order{
+width: 20px;
+height: 20px;
+
+background: #C4C4C4;
+border: 1px solid #000000;
+box-sizing: border-box;
+
+}
+.dump{
+    width: 21px;
+    height: 20px;
+    border: none;
+    
+}
