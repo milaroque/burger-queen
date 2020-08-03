@@ -1,21 +1,20 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Input from '../input/Input' 
 
 const ComandClient = (props) => {
-    const [client, setClient] = useState()
-    const [table, setTable] = useState()
+
     return (
         <>
-            <div>'Resumo'</div>
+            <div>Resumo</div>
             <form>
-            <Input type='text' value={client} placeholder='Nome do cliente' onChange={(e) => setClient(e.target.value)}/>
-            <Input type='number' value={table} placeholder='Número da mesa' onChange={(e)=> setTable(e.target.value)}/>
+            <Input type='text' value={props.valueName} placeholder='Nome do cliente' onChange={props.nameClient}/>
+            <Input type='number' value={props.valueTable} placeholder='Número da mesa' onChange={props.numberTable}/>
             </form>
             <div>
-            <div>Produto</div>
-            <div>Quantidade</div>
-            <div>Deletar</div>
-            <div>Preço</div>
+            <span>Produto </span>
+            <span> Quantidade </span>
+            <span> Deletar </span>
+            <span> Preço</span>
             </div>
         </>
     )
