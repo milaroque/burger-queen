@@ -9,22 +9,22 @@ import Swal from "sweetalert2";
 import firebase from "../../config/firebase";
 import "firebase/firebase-firestore";
 import Input from "../../components/input/Input";
-import './newRequest.css'
+import "./newRequest.css";
 
 const NewRequest = () => {
   const [breakfast, setBreakfast] = useState([]);
   const [hamburger, setHamburger] = useState([]);
   const [sideDishes, setSideDishes] = useState([]);
   const [drinks, setDrinks] = useState([]);
-  const [add, setAdd] = useState([]);
   const [order, setOrder] = useState([]);
   const [subTotal, setSubTotal] = useState(0);
   const [client, setClient] = useState("");
   const [table, setTable] = useState("");
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [disabledBtns, setDisabledBtns] = useState(true);
-  const [type, setType] = useState("")
-  const [extra, setExtra] = useState("")
+  const [type, setType] = useState("");
+  const [extra, setExtra] = useState([]);
+  const [selectedHamburguer, setSelectedHamburguer] = useState("");
 
   useEffect(() => {
     getMenu().then(([breakfast, hamburger, sideDishes, drinks, add]) => {
@@ -32,7 +32,6 @@ const NewRequest = () => {
       setHamburger(hamburger);
       setSideDishes(sideDishes);
       setDrinks(drinks);
-      setAdd(add);
     });
   }, []);
 
@@ -45,9 +44,9 @@ const NewRequest = () => {
       ...item,
       quantity: 1,
       type,
-      extra
-      
+      extra,
     });
+    setIsModalVisible(false)
   };
 
   const AddItem = (item) => {
@@ -68,16 +67,31 @@ const NewRequest = () => {
       setOrder([...order]);
     }
   };
+  const handleNewHamburguer = (item) => {
+    setIsModalVisible(true);
+    setSelectedHamburguer(item);
+  }
+
+    const handleAddExtra = (e) => {
+    if (extra !== "") {
+      const composedExtra = [...extra, e.target.value];
+      setExtra(composedExtra);
+    }
+  };
 
   useEffect(() => {
     const total = () => {
-      setSubTotal(order.reduce((acc, curr) => acc + curr.total, 0));
-    };
+      let acc = 0;
+        order.forEach((item) => {
+          acc += item.price * item.quantity
+        });
+      return setSubTotal(acc)
+    }
     order.length === 0 ? setDisabledBtns(true) : setDisabledBtns(false);
     total();
   }, [order]);
 
-  const saveOrderFirebase = (client, table) => {
+  const saveOrderFirebase = (client, table, type, extra) => {
     if (!client || !table) {
       Swal.fire({
         text: "Preencha o nome do cliente, número da mesa e adicione o pedido",
@@ -93,12 +107,12 @@ const NewRequest = () => {
           client,
           table,
           order: order.map((item) => {
-            return {
+          return {
               id: item.id,
               item: item.item,
               price: item.price,
-              type: item.type || null,
-              extra: item.extra || null,
+              type: type || "",
+              extra: JSON.stringify(extra || []), //JSON.parse
             };
           }),
           status: "Em preparação",
@@ -121,65 +135,33 @@ const NewRequest = () => {
         );
     }
   };
-/*   const updateHamburguer = (id) => {
-    if (options === "bovino" && extra === 'queijo') {
-      return firebase.firestore().collection("order").doc(id).update({
-        type: "bovino",
-        extra: "queijo"
-      });
-    } else if (options === "frango" === 'quejo') {
-      return firebase.firestore().collection("order").doc(id).update({
-        type: "frango",
-        extra: "quejo"
-      });
-    } else {
-      return firebase.firestore().collection("order").doc(id).update({
-        type: "vegetariano",
-        extra: ""
-      });
-    }
-  }; */
-
-  /* const updateExtras = (item, id) => {
-    if (item.extra === "ovo") {
-      return firebase.firestore().collection("order").doc(id).update({
-        type: "ovo",
-      });
-    } else if (item.extra === "queijo") {
-      return firebase.firestore().collection("order").doc(id).update({
-        type: "queijo",
-      });
-    } else {
-      return firebase.firestore().collection("order").doc(id).update({
-        type: "queijo e ovo",
-      });
-    }
-  }; */
 
   return (
-    <header className='hall'>
-      <Nav link='/newRequest'></Nav>
-      <header className='header-hall'>Novo Pedido</header>
-      <main className='menu'>
-      <section className='breakfast-menu'>
-        <div className='breakfast'>Café da Manhã</div>
-        <Menu
-          menu={breakfast}
-          className="image"
-          addOrder={(item) => addItemOrder(item)}
-        />
-      </section>
-      <section className='burges-menu'>
-        <div className='burgers'>Hamburgers</div>
-        <div onClick={() => setIsModalVisible(true)}>
+    <header className="hall">
+      <Nav link="/newRequest"></Nav>
+      <header className="header-hall">Novo Pedido</header>
+      <main className="menu">
+        <section className="breakfast-menu">
+          <div className="breakfast">Café da Manhã</div>
           <Menu
-            menu={hamburger}
+            menu={breakfast}
             className="image"
             addOrder={(item) => addItemOrder(item)}
           />
-        </div>
-      </section>
-      {isModalVisible ? (
+        </section>
+        <section className="burges-menu">
+          <div className="burgers">Hamburgers</div>
+          <div onClick={() => setIsModalVisible(true)}>
+          <Menu
+            menu={hamburger}
+            className="image"
+            addOrder={addItemOrder}
+            selectHamburguer={handleNewHamburguer}
+            type={"hamburguer"}
+          />
+          </div>
+       </section>
+      {isModalVisible && (
         <Modal onClose={() => setIsModalVisible(false)}>
           <section>
             <div>OPÇÕES</div>
@@ -192,70 +174,69 @@ const NewRequest = () => {
               <Button name="Vegetariano" />
             </div>
             <div>
-            <Input type='checkbox' name='extraOvo' value='ovo' onChange={(e) => setExtra(e.target.value)} />
+            <Input type='checkbox' name='extraOvo' value='+ ovo' onChange={(e) => handleAddExtra(e)} />
               <Button name="Ovo" />
-              <Input type='checkbox' name='extraQueijo' value='queijo' onChange={(e) => setExtra(e.target.value)} />
+              <Input type='checkbox' name='extraQueijo' value='+ queijo' onChange={(e) => handleAddExtra(e)} />
               <Button name="Queijo" />
             </div>
-
-            <Button name='Adicionar' onClick={(item) => addItemOrder(item)}/>
+            <Button name='Adicionar' onClick={() => addItemOrder(selectedHamburguer)}/>
           </section>
         </Modal>
-      ) : null}
+      )}
       <section className='menu-sidedishes'>
-        <div className='sidedishes'>Acompanhamentos</div>
-        <Menu
-          menu={sideDishes}
-          className="image"
-          addOrder={(item) => addItemOrder(item)}
-        />
-      </section>
-      <section className='menu-drinks'>
-        <div className='drinks'>Bebidas</div>
-        <Menu
-          menu={drinks}
-          className="image"
-          addOrder={(item) => addItemOrder(item)}
-        />
-      </section>
-      <section>
-        <div>Resumo</div>
-        <form>
-          <Input
-            type="text"
-            value={client}
-            placeholder="Nome do cliente"
-            onChange={(e) => setClient(e.target.value)}
+          <div className="sidedishes">Acompanhamentos</div>
+          <Menu
+            menu={sideDishes}
+            className="image"
+            addOrder={(item) => addItemOrder(item)}
           />
-          <Input
-            type="number"
-            value={table}
-            placeholder="Número da mesa"
-            onChange={(e) => setTable(e.target.value)}
+        </section>
+        <section className="menu-drinks">
+          <div className="drinks">Bebidas</div>
+          <Menu
+            menu={drinks}
+            className="image"
+            addOrder={(item) => addItemOrder(item)}
           />
-        </form>
-        <div>
-          <span>Produto </span>
-          <span> Quantidade </span>
-          <span> Deletar </span>
-          <span> Preço</span>
-        </div>
+        </section>
+        <section>
+          <div>Resumo</div>
+          <form>
+            <Input
+              type="text"
+              value={client}
+              placeholder="Nome do cliente"
+              onChange={(e) => setClient(e.target.value)}
+            />
+            <Input
+              type="number"
+              value={table}
+              placeholder="Número da mesa"
+              onChange={(e) => setTable(e.target.value)}
+            />
+          </form>
+          <div>
+            <span>Produto </span>
+            <span> Quantidade </span>
+            <span> Deletar </span>
+            <span> Preço</span>
+          </div>
 
-        <Order
-          order={order}
-          addClick={(item) => AddItem(item)}
-          deleteClick={() => deleteItem(order)}
-          removeClick={(item) => removeItem(item)}
-          className="imagem"
+          <Order
+            order={order}
+            addClick={(item) => AddItem(item)}
+            deleteClick={() => deleteItem(order)}
+            removeClick={(item) => removeItem(item)}
+            className="imagem"
+          />
+          <div>SubTotal R${subTotal}</div>
+        </section>
+        <Button
+          name="ENVIAR PEDIDO"
+          disabled={disabledBtns}
+          onClick={() => saveOrderFirebase(client, table, type, extra)}
         />
-        <div>SubTotal R${subTotal}</div>
-      </section>
-      <Button
-        name="ENVIAR PEDIDO"
-        disabled={disabledBtns}
-        onClick={() => saveOrderFirebase(client, table)}
-      />
-      <Button name="CANCELAR" />
+        <Button name="CANCELAR" />
       </main>
     </header>
   );

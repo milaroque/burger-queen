@@ -6,7 +6,10 @@ function Menu(props) {
     <>
       {props.menu.map((item) => (
         <button className={props.className} 
-          onClick={() => props.addOrder(item)}
+          onClick={() => { 
+            props.type !== "hamburguer" && props.addOrder(item);
+            props.selectHamburguer && props.selectHamburguer(item);
+          }}
           key={item.id}
           value={item.price}
         >
