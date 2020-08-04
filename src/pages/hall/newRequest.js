@@ -9,20 +9,22 @@ import Swal from "sweetalert2";
 import firebase from "../../config/firebase";
 import "firebase/firebase-firestore";
 import Input from "../../components/input/Input";
-import './newRequest.css'
+import "./newRequest.css";
 
 const NewRequest = () => {
   const [breakfast, setBreakfast] = useState([]);
   const [hamburger, setHamburger] = useState([]);
   const [sideDishes, setSideDishes] = useState([]);
   const [drinks, setDrinks] = useState([]);
-  const [add, setAdd] = useState([]);
   const [order, setOrder] = useState([]);
   const [subTotal, setSubTotal] = useState(0);
   const [client, setClient] = useState("");
   const [table, setTable] = useState("");
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [disabledBtns, setDisabledBtns] = useState(true);
+  const [type, setType] = useState("");
+  const [extra, setExtra] = useState([]);
+  const [selectedHamburguer, setSelectedHamburguer] = useState("");
 
   useEffect(() => {
     getMenu().then(([breakfast, hamburger, sideDishes, drinks, add]) => {
@@ -30,7 +32,6 @@ const NewRequest = () => {
       setHamburger(hamburger);
       setSideDishes(sideDishes);
       setDrinks(drinks);
-      setAdd(add);
     });
   }, []);
 
@@ -42,7 +43,10 @@ const NewRequest = () => {
     saveOrder({
       ...item,
       quantity: 1,
+      type,
+      extra,
     });
+    setIsModalVisible(false)
   };
 
   const AddItem = (item) => {
@@ -63,16 +67,31 @@ const NewRequest = () => {
       setOrder([...order]);
     }
   };
+  const handleNewHamburguer = (item) => {
+    setIsModalVisible(true);
+    setSelectedHamburguer(item);
+  }
+
+    const handleAddExtra = (e) => {
+    if (extra !== "") {
+      const composedExtra = [...extra, e.target.value];
+      setExtra(composedExtra);
+    }
+  };
 
   useEffect(() => {
     const total = () => {
-      setSubTotal(order.reduce((acc, curr) => acc + curr.total, 0));
-    };
+      let acc = 0;
+        order.forEach((item) => {
+          acc += item.price * item.quantity
+        });
+      return setSubTotal(acc)
+    }
     order.length === 0 ? setDisabledBtns(true) : setDisabledBtns(false);
     total();
   }, [order]);
 
-  const saveOrderFirebase = (client, table) => {
+  const saveOrderFirebase = (client, table, type, extra) => {
     if (!client || !table) {
       Swal.fire({
         text: "Preencha o nome do cliente, número da mesa e adicione o pedido",
@@ -88,12 +107,12 @@ const NewRequest = () => {
           client,
           table,
           order: order.map((item) => {
-            return {
+          return {
               id: item.id,
               item: item.item,
               price: item.price,
-              type: item.type || null,
-              extra: item.extra || null,
+              type: type || "",
+              extra: JSON.stringify(extra || []), //JSON.parse
             };
           }),
           status: "Em preparação",
@@ -116,37 +135,6 @@ const NewRequest = () => {
         );
     }
   };
-  const updateHamburguer = (item, id) => {
-    if (item.type === "bovino") {
-      return firebase.firestore().collection("order").doc(id).update({
-        type: "bovino",
-      });
-    } else if (item.type === "frango") {
-      return firebase.firestore().collection("order").doc(id).update({
-        type: "frango",
-      });
-    } else {
-      return firebase.firestore().collection("order").doc(id).update({
-        type: "vegetariano",
-      });
-    }
-  };
-
-  const updateExtras = (item, id) => {
-    if (item.extra === "ovo") {
-      return firebase.firestore().collection("order").doc(id).update({
-        type: "ovo",
-      });
-    } else if (item.extra === "queijo") {
-      return firebase.firestore().collection("order").doc(id).update({
-        type: "queijo",
-      });
-    } else {
-      return firebase.firestore().collection("order").doc(id).update({
-        type: "queijo e ovo",
-      });
-    }
-  };
 
   return (
     <div className='global'>
@@ -165,36 +153,42 @@ const NewRequest = () => {
             addOrder={(item) => addItemOrder(item)}
           />
         </section>
-        <section className='burges-menu'>
-          <div className='burgers'>Hamburgers</div>
+        <section className="burges-menu">
+          <div className="burgers">Hamburgers</div>
           <div onClick={() => setIsModalVisible(true)}>
-            <Menu
-              menu={hamburger}
-              className="image"
-              addOrder={(item) => addItemOrder(item)}
-            />
+          <Menu
+            menu={hamburger}
+            className="image"
+            addOrder={addItemOrder}
+            selectHamburguer={handleNewHamburguer}
+            type={"hamburguer"}
+          />
           </div>
-        </section>
-        {isModalVisible ? (
-          <Modal onClose={() => setIsModalVisible(false)}>
-            <section>
-              <div>OPÇÕES</div>
-              <div>
-                <Button name="Bovino" />
-                <Button name="Frango" />
-                <Button name="Vegetariano" />
-              </div>
-
-              <Menu
-                menu={add}
-                className="image"
-                addOrder={(item) => addItemOrder(item)}
-              />
-            </section>
-          </Modal>
-        ) : null}
-        <section className='menu-sidedishes'>
-          <div className='sidedishes'>Acompanhamentos</div>
+       </section>
+      {isModalVisible && (
+        <Modal onClose={() => setIsModalVisible(false)}>
+          <section>
+            <div>OPÇÕES</div>
+            <div>
+              <Input type='radio' name='options' value='bovino' onChange={(e) => setType(e.target.value)} />
+              <Button name="Bovino" />
+              <Input type='radio' name='options' value='frango' onChange={(e) => setType(e.target.value)} />
+              <Button name="Frango" />
+              <Input type='radio' name='options' value='vegetariano' onChange={(e) => setType(e.target.value)} />
+              <Button name="Vegetariano" />
+            </div>
+            <div>
+            <Input type='checkbox' name='extraOvo' value='+ ovo' onChange={(e) => handleAddExtra(e)} />
+              <Button name="Ovo" />
+              <Input type='checkbox' name='extraQueijo' value='+ queijo' onChange={(e) => handleAddExtra(e)} />
+              <Button name="Queijo" />
+            </div>
+            <Button name='Adicionar' onClick={() => addItemOrder(selectedHamburguer)}/>
+          </section>
+        </Modal>
+      )}
+      <section className='menu-sidedishes'>
+          <div className="sidedishes">Acompanhamentos</div>
           <Menu
             menu={sideDishes}
             className="image"
