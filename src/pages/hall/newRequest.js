@@ -239,14 +239,17 @@ const NewRequest = () => {
               removeClick={(item) => removeItem(item)}
               className="imagem"
             />
-            <div>SubTotal R${subTotal}</div>
+            <div className='subtotal'>Sub-Total: R${subTotal}</div>
             <Button
               name="ENVIAR PEDIDO"
+              className='submit'
               disabled={disabledBtns}
               onClick={() => saveOrderFirebase(client, table)}
             />
-            <Button name="CANCELAR" />
-           
+            <Button 
+            name="CANCELAR" 
+            className='remove'
+            />
       </div>      
       </main>
     </div>

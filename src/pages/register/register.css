@@ -21,16 +21,16 @@
 
 .btn-register {
   font-size: 18px;
-    height: 2.5vw;
-    margin: 0px 38px 3px 33px;
-    width: 20vw;
-    background-color: #cc1900;
-    border: none;
-    border-radius: 35px;
-    color: #fff;
-    outline: none;
-    cursor: pointer;
-    margin-top: 40px;
+  height: 2.5vw;
+  margin: 0px 38px 3px 33px;
+  width: 20vw;
+  background-color: #cc1900;
+  border: none;
+  border-radius: 35px;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  margin-top: 40px;
 }
 .chef-kitchen,
 .img-hall {
@@ -52,15 +52,12 @@
   align-self: center;
   font-weight: bold;
 }
-.label-hall {
-  font-size: 20px;
-} 
 .select-type {
   width: 100vw;
-    height: 9vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 9vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .select-type-two {
   display: flex;
@@ -130,6 +127,5 @@
   .label-kitchen, .label-hall{
     font-size: 15px;
   }
-
 }
 
