@@ -30,7 +30,7 @@ figure{
   outline: none;
 }
 .button-loggin{
-  font-size: 22px;
+  font-size: 20px;
   height: 2.5vw;
   width: 20vw;
   background-color: #CC1900;
@@ -65,7 +65,7 @@ p{
 .select-form{
   display: contents;
 }
-@media (max-width: 800px) {
+@media (min-width: 640px) and (max-width: 1024px) {
   img{
     margin: 0px;
     width: 80vw;
@@ -85,24 +85,70 @@ p{
   }
   .input-login{
     margin: 22px 0px 19px 0px;
-    height: 60px;
-    width: 75%;
+    height: 70px;
+    width: 85%;
+    font-size: 24px;
   }
   .form-login{
     display: contents;
   }
   .eye{
-    top: 64%;
-    right: 18%;
+    top: 65.5%;
+    right: 13%;
+    width: 12px;
   }
   .button-loggin{
-    margin-top: 30px;
-    height: 57px;
-    width: 52%;
+    margin-top: 69px;
+    height: 62px;
+    width: 53%;
+    font-size: 30px;
   }
   p{
     font-size: 20px;
-    margin-top: 30px;
   }
+}
+@media (max-width: 380px){
+  img{
+    margin: 0px;
+    width: 89vw;
+    height: 38vh;
+  }
+  figure{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 50vh;
+  }
+  .div{
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
+  .input-login{
+    
+    margin: 0px 0px 13px 0px;
+    height: 48px;
+    width: 87%;
+    font-size: 17px;
+  }
+  .form-login{
+    display: contents;
+  }
+  .eye{
+    top: 61.5%;
+    right: 16%;
+    width: 12px;
+  }
+  .button-loggin{
+    margin-top: 33px;
+    height: 34px;
+    width: 40%;
+    font-size: 19px;
+  }
+  p{
+    font-size: 14px;
+  }
+
 }
 

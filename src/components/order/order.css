@@ -1,0 +1,129 @@
+.items{
+    width: 41vw;
+    height: 44px;
+    background: #FFFDFD;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    margin: 9px 0px 10px 25px;
+} 
+.key{
+    display: flex;
+    width: 41vw;
+}
+.name-item, .total-item{
+    width: 12vw;
+    font-family: Fira Sans;
+    display: flex;
+    font-size: 16px;
+    height: 20px;
+    font-weight: bold;
+    margin-top: 12px;
+    padding-left: 9px;
+}
+.total-item{
+    width: 5vw;
+}
+.btn-less, .btn-more, .btn-dump, .sum{
+    font-size: 23px; 
+    width: 60px;
+    height: 25px;
+    background: #C4C4C4;
+    border: 1px solid #000000;
+    border-radius: 0px;
+    margin-top: 8px;
+}
+.sum{
+    font-size: 16px;
+    font-family: Fira Sans;
+    font-weight: bold;
+    width: 55px;
+    height: 23px;
+    /* display: flex; */
+    margin: 3px 9px 4px 0px;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    width: 27vw;
+    justify-content: center;
+}
+.btn-dump{
+    background: none;
+    border: none;
+}
+.dump{
+    width: 21px;
+    height: 20px;
+    border: none;
+    
+}
+@media (min-width: 640px) and (max-width: 1024px) {
+  .items{
+    width: 44vw;
+    height: 66px;
+    margin: 9px 0px 10px 4px;
+  }
+  .buttons{
+    width: 23vw;
+  }
+  .name-item{
+    width: 27vw;
+    height: 48px;
+    padding-left: 0px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
+  }
+  .total-item{
+    width: 2.5vw;
+    margin-top: 20px;
+  }
+  .btn-less, .btn-more, .btn-dump{
+    height: 41px;
+  }
+  .sum{
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-dump{
+    margin-right: 0px;
+  }
+}
+@media (max-width: 380px){
+  .items{
+    margin: 9px 0px 11px 2px;
+    width: 43vw;
+    height: 86px;
+  }
+  .buttons{
+    display: flex;
+    width: 44vw;
+    
+  }
+  .name-item{
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    width: 41vw;
+    padding-left: 0px;
+  }
+  .total-item{
+    display: flex;
+    justify-content: center;
+    margin-top: 0px; 
+    padding-left: 0px;
+    width: 43vw;
+  }
+  .key{
+    display: block;
+  }
+  .btn-dump{
+    margin-right: 0px;
+  }
+  .btn-more{
+    margin-right: 0px;
+  }
+
+}

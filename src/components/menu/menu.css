@@ -17,11 +17,14 @@ line-height: 19px;
 color: #000000;
 }
 @media (min-width: 640px) and (max-width: 1024px){
-    button{
-        width: 31%;
-        height: 13.3vw;
-    } 
+  button{
+    width: 31%;
+    height: 13.3vw;
+  } 
 }
-@media (max-width: 360px){
-    
+@media (max-width: 380px){
+  button{
+    height: 15vh;
+    width: 30vw;
+  }
 }

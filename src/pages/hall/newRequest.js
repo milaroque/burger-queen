@@ -137,12 +137,16 @@ const NewRequest = () => {
   };
 
   return (
-    <header className="hall">
-      <Nav link="/newRequest"></Nav>
-      <header className="header-hall">Novo Pedido</header>
-      <main className="menu">
-        <section className="breakfast-menu">
-          <div className="breakfast">Café da Manhã</div>
+    <div className='global'>
+      <header className='hall'>
+        <Nav link='/newRequest'></Nav>
+      </header>
+      <h1 className='header-hall'>Novo Pedido</h1>
+      <main className='menu'>
+        <div className='container-menu'>
+        <section className='breakfast-menu'>
+          <h2 className='title-menu'>Menu</h2>
+          <div className='breakfast'>Café da Manhã</div>
           <Menu
             menu={breakfast}
             className="image"
@@ -191,54 +195,59 @@ const NewRequest = () => {
             addOrder={(item) => addItemOrder(item)}
           />
         </section>
-        <section className="menu-drinks">
-          <div className="drinks">Bebidas</div>
+        <section className='menu-drinks'>
+          <div className='drinks'>Bebidas</div>
           <Menu
             menu={drinks}
             className="image"
             addOrder={(item) => addItemOrder(item)}
           />
         </section>
-        <section>
-          <div>Resumo</div>
-          <form>
-            <Input
-              type="text"
-              value={client}
-              placeholder="Nome do cliente"
-              onChange={(e) => setClient(e.target.value)}
+        </div>
+          <div className='order-table'> 
+            <h2 className='title-menu'> Comanda </h2>
+            <form className='dice'>
+              <Input
+                type="text"
+                value={client}
+                placeholder="Nome do cliente"
+                className="form-order"
+                onChange={(e) => setClient(e.target.value)}
+              />
+              <Input
+                type="number"
+                value={table}
+                placeholder="Número da mesa"
+                className="form-order"
+                onChange={(e) => setTable(e.target.value)}
+              />
+            </form>
+            <div className='description'>
+              <span className='tab-item'> Item </span>
+              <span className='tab-value'> R$ </span>
+            </div>
+            <Order
+              order={order}
+              addClick={(item) => AddItem(item)}
+              deleteClick={() => deleteItem(order)}
+              removeClick={(item) => removeItem(item)}
+              className="imagem"
             />
-            <Input
-              type="number"
-              value={table}
-              placeholder="Número da mesa"
-              onChange={(e) => setTable(e.target.value)}
+            <div className='subtotal'>Sub-Total: R${subTotal}</div>
+            <Button
+              name="ENVIAR PEDIDO"
+              className='submit'
+              disabled={disabledBtns}
+              onClick={() => saveOrderFirebase(client, table)}
             />
-          </form>
-          <div>
-            <span>Produto </span>
-            <span> Quantidade </span>
-            <span> Deletar </span>
-            <span> Preço</span>
-          </div>
-
-          <Order
-            order={order}
-            addClick={(item) => AddItem(item)}
-            deleteClick={() => deleteItem(order)}
-            removeClick={(item) => removeItem(item)}
-            className="imagem"
-          />
-          <div>SubTotal R${subTotal}</div>
-        </section>
-        <Button
-          name="ENVIAR PEDIDO"
-          disabled={disabledBtns}
-          onClick={() => saveOrderFirebase(client, table, type, extra)}
-        />
-        <Button name="CANCELAR" />
+            <Button 
+            name="CANCELAR" 
+            className='remove'
+            />
+      </div>      
       </main>
-    </header>
+    </div>
+
   );
 };
 
