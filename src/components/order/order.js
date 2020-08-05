@@ -8,8 +8,8 @@ const Order = (props) => {
     <>
       {props.order.map((item) => (
         item.item === "Hamburger simples" || item.item === "Hamburger duplo" ?
-        <main className='items'>
-      <div className='key' key={item.id}>
+        <main className='items' key={item.id}>
+      <div className='key' >
       <div className='name-item'>{item.item} {item.type} {item.extra}</div>
       <div className='buttons'>
           <button onClick={() => props.removeClick(item)} className='btn-less'>-</button>
@@ -21,8 +21,8 @@ const Order = (props) => {
       </div>
       </main>
         : 
-        <main className='items'>
-      <div className='key' key={item.id}>
+        <main className='items' key={item.id}>
+      <div className='key' >
       <div className='name-item'>{item.item}</div>
       <div className='buttons'>
           <button onClick={() => props.removeClick(item)} className='btn-less'>-</button>
