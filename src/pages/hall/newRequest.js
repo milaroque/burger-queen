@@ -27,7 +27,7 @@ const NewRequest = () => {
   const [selectedHamburguer, setSelectedHamburguer] = useState("");
 
   useEffect(() => {
-    getMenu().then(([breakfast, hamburger, sideDishes, drinks, add]) => {
+    getMenu().then(([breakfast, hamburger, sideDishes, drinks]) => {
       setBreakfast(breakfast);
       setHamburger(hamburger);
       setSideDishes(sideDishes);
@@ -42,10 +42,12 @@ const NewRequest = () => {
   const addItemOrder = (item) => {
     saveOrder({
       ...item,
+      price: extra.length > 0 ? parseInt(item.price) + extra.length : item.price,
       quantity: 1,
       type,
       extra,
     });
+    setExtra([])
     setIsModalVisible(false)
   };
 
@@ -74,8 +76,7 @@ const NewRequest = () => {
 
     const handleAddExtra = (e) => {
     if (extra !== "") {
-      const composedExtra = [...extra, e.target.value];
-      setExtra(composedExtra);
+      setExtra([...extra, e.target.value]);
     }
   };
 
@@ -87,11 +88,17 @@ const NewRequest = () => {
         });
       return setSubTotal(acc)
     }
-    order.length === 0 ? setDisabledBtns(true) : setDisabledBtns(false);
+    order.length === 0 && type.length === 0 ? setDisabledBtns(true) : setDisabledBtns(false);
     total();
-  }, [order]);
+  }, [order, type]);
 
-  const saveOrderFirebase = (client, table, type, extra) => {
+  const cancell = () => {
+    setType("")
+    setExtra([])
+    setOrder([])
+  }
+
+  const saveOrderFirebase = (client, table, type) => {
     if (!client || !table) {
       Swal.fire({
         text: "Preencha o nome do cliente, número da mesa e adicione o pedido",
@@ -112,7 +119,7 @@ const NewRequest = () => {
               item: item.item,
               price: item.price,
               type: type || "",
-              extra: JSON.stringify(extra || []), //JSON.parse
+              extra: JSON.stringify(item.extra || []), //JSON.parse
             };
           }),
           status: "Em preparação",
@@ -135,7 +142,6 @@ const NewRequest = () => {
         );
     }
   };
-
   return (
     <div className='global'>
       <header className='hall'>
@@ -150,7 +156,7 @@ const NewRequest = () => {
           <Menu
             menu={breakfast}
             className="image"
-            addOrder={(item) => addItemOrder(item)}
+            addOrder={addItemOrder}
           />
         </section>
         <section className="burges-menu">
@@ -171,7 +177,7 @@ const NewRequest = () => {
             <div>OPÇÕES</div>
             <div>
               <Input type='radio' name='options' value='bovino' onChange={(e) => setType(e.target.value)} />
-              <Button name="Bovino" />
+              <Button type='radio' name="Bovino" />
               <Input type='radio' name='options' value='frango' onChange={(e) => setType(e.target.value)} />
               <Button name="Frango" />
               <Input type='radio' name='options' value='vegetariano' onChange={(e) => setType(e.target.value)} />
@@ -183,7 +189,7 @@ const NewRequest = () => {
               <Input type='checkbox' name='extraQueijo' value='+ queijo' onChange={(e) => handleAddExtra(e)} />
               <Button name="Queijo" />
             </div>
-            <Button name='Adicionar' onClick={() => addItemOrder(selectedHamburguer)}/>
+            <Button name='Adicionar' disabled={disabledBtns} onClick={() => addItemOrder(selectedHamburguer)}/>
           </section>
         </Modal>
       )}
@@ -192,7 +198,7 @@ const NewRequest = () => {
           <Menu
             menu={sideDishes}
             className="image"
-            addOrder={(item) => addItemOrder(item)}
+            addOrder={addItemOrder}
           />
         </section>
         <section className='menu-drinks'>
@@ -200,7 +206,7 @@ const NewRequest = () => {
           <Menu
             menu={drinks}
             className="image"
-            addOrder={(item) => addItemOrder(item)}
+            addOrder={addItemOrder}
           />
         </section>
         </div>
@@ -241,13 +247,13 @@ const NewRequest = () => {
               onClick={() => saveOrderFirebase(client, table)}
             />
             <Button 
-            name="CANCELAR" 
+            name="CANCELAR"
+            onClick={() => cancell()}
             className='remove'
             />
       </div>      
       </main>
     </div>
-
   );
 };
 
