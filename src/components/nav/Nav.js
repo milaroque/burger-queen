@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import Image from "../../components/image/image";
 import logo from "../../assets/logo.png";
@@ -10,10 +10,27 @@ import "./nav.css";
 
 
 const Nav = () => {
+  const [open, setOpen] = useState(false)
+
+  const menuOpen = () =>{
+    setOpen(!open)
+  }
   return (
     <nav className="menu-buguer">
       <div>
+        <button onClick={menuOpen}>
         <Image src={menu} alt="menu" class="menu-hamburguer" />
+        </button>
+        {open && (
+          <div>
+            <Link to=''>
+            <button>Pedidos à Entregar</button>
+            </Link>
+            <Link to=''>
+            <button>Histórico de Pedidos</button>
+            </Link>
+          </div>
+        )}
       </div>
       <div>
         <Image src={logo} alt="logo-nav" class="logo-nav" />
@@ -34,4 +51,3 @@ const Nav = () => {
 }
 
 export default Nav;
-
