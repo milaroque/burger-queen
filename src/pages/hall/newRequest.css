@@ -25,8 +25,8 @@
   justify-content: center;
 }
 .breakfast, .burgers, .drinks, .sidedishes{
-  font-size: 12px;
-  width: 16vw;
+  font-size: 17px;
+  width: 18vw;
   background: #F95C4B;
   border-radius: 20px;
   display: flex;
@@ -46,7 +46,7 @@
   border-radius:15px;
 }
 .title-menu{
-  font-size:22px;
+  font-size: 28px;
 }
 .global{
   height: 100vh;
