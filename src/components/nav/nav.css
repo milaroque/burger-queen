@@ -1,48 +1,86 @@
 .menu-hamburguer{
-    max-width: 38px;
-    width: 100vw;
-    height: 3vh;
-    padding-left: 10px; 
+  max-width: 38px;
+  width: 100vw;
+  height: 3vh;
 }
 .exit-login{
-    max-width: 50px;
-    width: 100vw;
-    height: 40px;
+  max-width: 50px;
+  width: 100vw;
+  height: 40px;
 }
 .logo-nav{
-    max-width: 7em;
-    height: 12vh;
-    
+  max-width: 7em;
+  height: 12vh;
 }
 .btn-exit{
-    margin-right: 10px;
-    width: 5vw;
-    height: 7vh;
-    border: none;
-    border-radius: 0px;
-    background-color: #fff !important;
+  margin-right: 10px;
+  width: 5vw;
+  height: 7vh;
+  border: none;
+  border-radius: 0px;
+  background-color: #fff !important;
 }
 .menu-buguer{
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #fff !important;
-    border-bottom: 1px solid rgba(216, 84, 84, 0.308); 
-    
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff !important;
+  border-bottom: 1px solid rgba(216, 84, 84, 0.308); 
 }
-@media (max-width: 800px) {
-    .logo-nav{
-        height: 11vh;
-    }
-    .btn-exit{
-        padding-right: 52px;
-    }
-    
+.btn-pages{
+  width: 4vw;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff !important;
+}
+.listener{
+  width: 4vw;
+  height: 6vh;
+  display: flex;
+  flex-direction: column;
+}
+.pages{
+  width: 14vw;
+  height: 5vh;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-radius: 0px;
+  border-bottom: 1px solid rgba(216, 84, 84, 0.308); 
+}
+@media (min-width: 640px) and (max-width: 1024px) {
+  .logo-nav{
+    max-width: 11em;
+    height: 11vh;
+  }
+  .btn-exit{
+    padding-right: 52px;
+  }
+  .btn-pages{
+    padding-left: 21px;
+  }
+  .pages{
+    width: 24vw;
+    height: 4vh;
+  }
+}
+@media (max-width: 380px){
+  .pages{
+    width: 35vw;
+    height: 4vh;
+  }
+  .listener{
+    padding-left: 11px;
+  }
+  .btn-exit{
+    margin-right: 35px;
+  }
+}
 
-}
 

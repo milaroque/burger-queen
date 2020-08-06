@@ -8,26 +8,24 @@ import firebase from "../../config/firebase.js";
 import "firebase/firebase-auth";
 import "./nav.css";
 
-
 const Nav = () => {
   const [open, setOpen] = useState(false)
-
-  const menuOpen = () =>{
+  const menuOpen = () => {
     setOpen(!open)
   }
   return (
     <nav className="menu-buguer">
-      <div>
-        <button onClick={menuOpen}>
-        <Image src={menu} alt="menu" class="menu-hamburguer" />
+      <div className="listener">
+        <button onClick={menuOpen} className="btn-pages">
+          <Image src={menu} alt="menu" class="menu-hamburguer" />
         </button>
         {open && (
           <div>
             <Link to=''>
-            <button>Pedidos à Entregar</button>
+              <button className="pages">Pedidos à Entregar</button>
             </Link>
             <Link to=''>
-            <button>Histórico de Pedidos</button>
+              <button className="pages">Histórico de Pedidos</button>
             </Link>
           </div>
         )}
@@ -51,4 +49,3 @@ const Nav = () => {
 }
 
 export default Nav;
-

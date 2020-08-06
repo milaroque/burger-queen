@@ -90,11 +90,11 @@
 .subtotal{
   margin-top: 30px;
   font-size: 20px;
-    font-family: Fira Sans;
-    display: flex;
-    justify-content: center;
-    font-weight: bold;
-    width: 45vw;
+  font-family: Fira Sans;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  width: 45vw;
 }
 @media (min-width: 640px) and (max-width: 1024px) {
   .tab-item{
@@ -103,7 +103,21 @@
   .menu{
     height: 80vh;
   }
-
+  .order-table{
+    width: 47vw;
+  }
+  .breakfast, .burgers, .drinks, .sidedishes{
+    font-size: 16px;
+    width: 20vw;
+    height: 33px;
+  }
+  .form-order{
+    width: 21vw;
+    height: 38px;
+  }
+  .title-menu{
+    font-size: 26px;
+  }
 }
 @media (max-width: 380px){
   .header-hall{
@@ -116,7 +130,6 @@
   .form-order{
     display: inline-flex;
     width: 37vw;
-
   }
   .tab-item{
     margin-right: 88px;
@@ -136,5 +149,8 @@
   .submit, .remove{
     width: 40vw;
     height: 10vw;
+  }
+  .order-table{
+    width: 47vw;
   }
 }
