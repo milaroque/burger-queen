@@ -8,9 +8,9 @@ const OrderCard = (props) => {
        <div key={item.id}>
         <div>Cliente: {item.client} Mesa:{item.table} Pedido:{item.time}</div>
         {item.order.map((i) => (
-          <div key={i.id}>{i.quantity}x {i.item}</div>
+          <div key={i.id}>{i.quantity}x {i.item} {i.type} {JSON.parse(i.extra)}</div>
         ))}
-        <Button name='Pedido Pronto' onClick={props.onClick}/>
+        <Button name={item.status} onClick={props.onClick}/>
         </div>       
       ))
       }
