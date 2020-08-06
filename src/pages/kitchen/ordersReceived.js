@@ -10,10 +10,12 @@ const [orders, setOrders] = useState([]);
 
 useEffect(() => {
 firebase.firestore().collection('orders').get().then((snapshot) => {
-  const pedidos = snapshot.docs.map((doc) => ({
+  const pedidos = snapshot.docs.map((doc) => 
+  ({
     id: doc.id,
     ...doc.data()
-  }))
+  })  
+  )
   setOrders(pedidos)
 })
 }, [])
