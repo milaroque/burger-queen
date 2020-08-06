@@ -50,21 +50,7 @@ export const getBreak = () => {
         })
     })
   }
-  export const getAdd= () => {
-    return new Promise((resolve) => {
-      firebase.firestore().collection('additional')
-        .get()
-        .then((snapshot) => {
-          const add = snapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data()
-          })
-          )
-          resolve(add);
-  
-        })
-    })
-  }
+
   export const getDrinks= () => {
     return new Promise((resolve) => {
       firebase.firestore().collection('drinks')
@@ -88,8 +74,7 @@ const getMenu = () => {
       getHamb(),
       getSideDishes(),
       getDrinks(),
-      getAdd(), 
-      
+
     ])
   }
 

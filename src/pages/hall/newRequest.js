@@ -10,6 +10,7 @@ import firebase from "../../config/firebase";
 import "firebase/firebase-firestore";
 import Input from "../../components/input/Input";
 import "./newRequest.css";
+import ModalBurger from "../../components/modal/modalHamb";
 
 const NewRequest = () => {
   const [breakfast, setBreakfast] = useState([]);
@@ -48,12 +49,12 @@ const NewRequest = () => {
       extra,
     });
     setExtra([])
+    setType("")
     setIsModalVisible(false)
   };
 
   const AddItem = (item) => {
     item.quantity += 1;
-    item.total = item.price * item.quantity;
     setOrder([...order]);
   };
 
@@ -65,7 +66,6 @@ const NewRequest = () => {
   const removeItem = (item) => {
     if (item.quantity > 1) {
       item.quantity -= 1;
-      item.total = item.price * item.quantity;
       setOrder([...order]);
     }
   };
@@ -98,7 +98,7 @@ const NewRequest = () => {
     setOrder([])
   }
 
-  const saveOrderFirebase = (client, table, type) => {
+  const saveOrderFirebase = (client, table) => {
     if (!client || !table) {
       Swal.fire({
         text: "Preencha o nome do cliente, número da mesa e adicione o pedido",
@@ -118,8 +118,9 @@ const NewRequest = () => {
               id: item.id,
               item: item.item,
               price: item.price,
-              type: type || "",
+              type: item.type || "",
               extra: JSON.stringify(item.extra || []), //JSON.parse
+              quantity: item.quantity
             };
           }),
           status: "Em preparação",
@@ -173,24 +174,12 @@ const NewRequest = () => {
        </section>
       {isModalVisible && (
         <Modal onClose={() => setIsModalVisible(false)}>
-          <section>
-            <div>OPÇÕES</div>
-            <div>
-              <Input type='radio' name='options' value='bovino' onChange={(e) => setType(e.target.value)} />
-              <Button type='radio' name="Bovino" />
-              <Input type='radio' name='options' value='frango' onChange={(e) => setType(e.target.value)} />
-              <Button name="Frango" />
-              <Input type='radio' name='options' value='vegetariano' onChange={(e) => setType(e.target.value)} />
-              <Button name="Vegetariano" />
-            </div>
-            <div>
-            <Input type='checkbox' name='extraOvo' value='+ ovo' onChange={(e) => handleAddExtra(e)} />
-              <Button name="Ovo" />
-              <Input type='checkbox' name='extraQueijo' value='+ queijo' onChange={(e) => handleAddExtra(e)} />
-              <Button name="Queijo" />
-            </div>
-            <Button name='Adicionar' disabled={disabledBtns} onClick={() => addItemOrder(selectedHamburguer)}/>
-          </section>
+          <ModalBurger
+          onChange={(e) => setType(e.target.value)}
+          handleAddExtra={(e) => handleAddExtra(e)}
+          addOrder={() => addItemOrder(selectedHamburguer)}
+          disabled={disabledBtns}
+           />
         </Modal>
       )}
       <section className='menu-sidedishes'>
