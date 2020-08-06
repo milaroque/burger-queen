@@ -13,14 +13,18 @@ width: 20%;
 height: 20%;
 }
 .name, .price{
+font-size: 15px;
 line-height: 19px;
 color: #000000;
 }
 @media (min-width: 640px) and (max-width: 1024px){
   button{
-    width: 31%;
+    width: 34%;
     height: 13.3vw;
-  } 
+  }
+  .name, .price{
+    font-size: 15px;
+  }
 }
 @media (max-width: 380px){
   button{
