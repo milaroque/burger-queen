@@ -10,17 +10,22 @@ const [orders, setOrders] = useState([]);
 
 useEffect(() => {
 firebase.firestore().collection('orders').get().then((snapshot) => {
-  const pedidos = snapshot.docs.map((doc) => 
-  ({
-    id: doc.id,
-    ...doc.data()
-  })  
-  )
-  setOrders(pedidos)
+  const pedidos = snapshot.docs.map((doc) => {
+  if (doc.data().status === 'Em Preparo!') {
+    return ({
+      id: doc.id,
+      ...doc.data()
+    })  
+    }
+    return false
+  })
+  setOrders(pedidos.filter(pedido => pedido !== false))
 })
 }, [])
 
 const readyOrder = (id) => {
+  console.log(id)
+  setOrders(orders.filter(order => order.id !== id))
   return firebase.firestore().collection('orders').doc(id).update({
    status: 'Pedido Pronto!',
   });
@@ -35,7 +40,7 @@ const readyOrder = (id) => {
       <div>
       <OrderCard 
       orders={orders}
-      onClick={() => readyOrder(orders)}/>
+      onClick={readyOrder}/>
       </div>
     </div>
 

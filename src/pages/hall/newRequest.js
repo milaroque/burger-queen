@@ -59,7 +59,7 @@ const NewRequest = () => {
   };
 
   const deleteItem = (item) => {
-    order.splice(order.indexOf(item), 1);
+    order.splice(order.indexOf(item.id), 1);
     setOrder([...order]);
   };
 
@@ -123,7 +123,7 @@ const NewRequest = () => {
               quantity: item.quantity
             };
           }),
-          status: "Em preparação",
+          status: "Em Preparo!",
           subTotal,
         })
         .then(
