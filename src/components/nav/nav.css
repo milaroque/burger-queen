@@ -52,7 +52,8 @@
   margin-top: 0px;
   margin-bottom: 0px;
   border-radius: 0px;
-  border-bottom: 1px solid rgba(216, 84, 84, 0.308); 
+  border-bottom: 1px solid rgba(216, 84, 84, 0.308);
+  position: relative;
 }
 @media (min-width: 640px) and (max-width: 1024px) {
   .logo-nav{

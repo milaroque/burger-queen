@@ -98,6 +98,13 @@ const NewRequest = () => {
     setOrder([])
   }
 
+  useEffect(() => {
+    if (isModalVisible === false) {
+      setExtra([])
+      setType('')
+    }
+  }, [isModalVisible])
+
   const saveOrderFirebase = (client, table) => {
     if (!client || !table) {
       Swal.fire({

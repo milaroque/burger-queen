@@ -8,7 +8,7 @@ import firebase from "../../config/firebase.js";
 import "firebase/firebase-auth";
 import "./nav.css";
 
-const Nav = () => {
+const NavKitchen = () => {
   const [open, setOpen] = useState(false)
   const menuOpen = () => {
     setOpen(!open)
@@ -24,11 +24,8 @@ const Nav = () => {
             <Link to='/ordersToBeDelivered'>
               <button className="pages">Pedidos à Entregar</button>
             </Link>
-            <Link to='/historicOrders'>
+            <Link to='/historicOrdersKitchen'>
               <button className="pages">Histórico de Pedidos</button>
-            </Link>
-            <Link to='/newRequest'>
-              <button className="pages">Novo Pedido</button>
             </Link>
           </div>
         )}
@@ -51,4 +48,4 @@ const Nav = () => {
 
 }
 
-export default Nav;
+export default NavKitchen;

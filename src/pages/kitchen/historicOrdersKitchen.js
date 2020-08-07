@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react'
 import NavKitchen from "../../components/nav/NavKitchen";
 import firebase from "../../config/firebase";
 import "firebase/firebase-firestore";
-import OrderCard from '../../components/orderKitchen/orderCard';
+import HistoricCardKitchen from '../../components/historicCard/historicCardKitchen';
 
-const OrdersReceived = () => {
+const HistoricOrdersKitchen = () => {
 
 const [orders, setOrders] = useState([]);
 
 useEffect(() => {
 firebase.firestore().collection('orders').get().then((snapshot) => {
   const pedidos = snapshot.docs.map((doc) => {
-  if (doc.data().status === 'Em Preparo!') {
+  if (doc.data().status === 'Pedido Entregue!') {
     return ({
       id: doc.id,
       ...doc.data()
@@ -23,25 +23,16 @@ firebase.firestore().collection('orders').get().then((snapshot) => {
 })
 }, [])
 
-const readyOrder = (id) => {
-  console.log(id)
-  setOrders(orders.filter(order => order.id !== id))
-  return firebase.firestore().collection('orders').doc(id).update({
-   status: 'Pedido Pronto!',
-   preparationTime: new Date().toLocaleString("pt-BR")
-  });
-}
-
     return (
-      <div link='/ordersReceived'>
+      <div link='/historicOrdersKitchen'>
       <NavKitchen>
-          Cozinha
+          Salão
       </NavKitchen>
-      <div>Pedidos à Preparar</div>
+      <div>Histórico de Pedidos</div>
       <div>
-      <OrderCard 
+      <HistoricCardKitchen
       orders={orders}
-      onClick={readyOrder}/>
+      />
       </div>
     </div>
 
@@ -49,4 +40,4 @@ const readyOrder = (id) => {
     )
   }
 
-export default OrdersReceived;
+export default HistoricOrdersKitchen;
