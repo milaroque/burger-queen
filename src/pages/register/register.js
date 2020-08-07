@@ -81,8 +81,10 @@ return (
     <form className='form-register'>
         <Input type="name" id="name" className="input-text" value={name} onChange={e => setName(e.target.value)} placeholder="Nome e Sobrenome" />
         <Input type="email" id="email" className="input-text" value={email} onChange={e => setEmail(e.target.value)} placeholder="Digite seu email" />
+        <fieldset className='olho-maldito'>
         <Input type={showPassword ? "text" : "password"} id="password" className="input-text" value={password} onChange={e => setPassword(e.target.value)} placeholder="Digite sua senha" />
         <i className="eye1 eyes" onClick={() => setShowPassword(!showPassword)}>{eye}</i>
+        </fieldset>
         <div className='select-type'>
           <Image src={chef} alt='img-chef' class='chef-kitchen'/>
           <label htmlFor='cozinha' className='label-kitchen'>COZINHA</label>

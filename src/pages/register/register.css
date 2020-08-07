@@ -3,7 +3,7 @@
   justify-content: center;
   height: 30vh;
   flex-flow: wrap;
-  position: relative;
+  
 }
 .input-text {
   border: solid 1.5px #3c2415;
@@ -69,12 +69,17 @@
 .eyes {
   width: 1vw;
   position: absolute;
-  right: 110px;
-  top: 77px;
+  right: 23px;
+  top: 28px;
 }
 .eyes:hover {
   color: #d13f34;
   cursor: pointer;
+}
+.olho-maldito{
+  position: relative;
+  border: none;
+
 }
 @media (min-width: 640px) and (max-width: 1024px) {
   .input-text{
@@ -92,8 +97,8 @@
     margin-left: 48px;
   }
   .eyes{
-    right: 69px;
-    top: 186px;
+    right: 31px;
+    top: 41px;
   }
   .form-register{
     width: 57vw;
@@ -116,10 +121,11 @@
     font-size: 13px;
     height: 4vh;
     margin-left: 48px;
+    margin-top: 10px
   }
   .eyes{
     right: 26px;
-    margin-top: 27px;
+    margin-top: 3px;
   }
   .form-register{
     width: 54vw;

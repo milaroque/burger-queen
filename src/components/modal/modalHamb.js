@@ -11,20 +11,17 @@ const ModalBurger = (props) => {
         <section>
         <div>OPÇÕES</div>
         <div>
-          <Input type='radio' name='options' value='bovino' onChange={props.onChange} />
-          <Button type='radio' name="Bovino" />
-          <Input type='radio' name='options' value='frango' onChange={props.onChange} />
-          <Button name="Frango" />
-          <Input type='radio' name='options' value='vegetariano' onChange={props.onChange} />
-          <Button name="Vegetariano" />
+          <Input type='radio' name='options' value='bovino' onChange={props.onChange} /> Bovino
+          <Input type='radio' name='options' value='frango' onChange={props.onChange} /> Frango
+          <Input type='radio' name='options' value='vegetariano' onChange={props.onChange} /> Vegetariano
         </div>
         <div>
         <Input type='checkbox' name='extraOvo' value='+ ovo' onChange={props.handleAddExtra} />
-          <button name="Ovo"><Image src={Egg} class='egg' /></button>
+          <Image src={Egg} class='egg' /> R$1,00
           </div>
           <div>
           <Input type='checkbox' name='extraQueijo' value='+ queijo' onChange={props.handleAddExtra} />
-          <button name="Queijo"><Image src={Cheese} class='cheese' /> </button>
+          <Image src={Cheese} class='cheese' /> R$1,00
         </div>
         <Button name='Adicionar' disabled={props.disabled} onClick={props.addOrder}/>
       </section>
