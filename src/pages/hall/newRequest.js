@@ -59,7 +59,7 @@ const NewRequest = () => {
   };
 
   const deleteItem = (item) => {
-    order.splice(order.indexOf(item), 1);
+    order.splice(order.indexOf(item.id), 1);
     setOrder([...order]);
   };
 

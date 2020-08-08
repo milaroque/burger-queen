@@ -3,7 +3,6 @@
   justify-content: center;
   height: 30vh;
   flex-flow: wrap;
-  
 }
 .input-text {
   border: solid 1.5px #3c2415;
@@ -76,11 +75,11 @@
   color: #d13f34;
   cursor: pointer;
 }
-.olho-maldito{
+.olho-maldito {
   position: relative;
   border: none;
-
 }
+
 @media (min-width: 640px) and (max-width: 1024px) {
   .input-text{
     margin-top: 23px;
