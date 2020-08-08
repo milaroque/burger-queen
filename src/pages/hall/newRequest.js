@@ -74,7 +74,7 @@ const NewRequest = () => {
     setSelectedHamburguer(item);
   }
 
-    const handleAddExtra = (e) => {
+  const handleAddExtra = (e) => {
     if (extra !== "") {
       setExtra([...extra, e.target.value]);
     }
@@ -83,9 +83,9 @@ const NewRequest = () => {
   useEffect(() => {
     const total = () => {
       let acc = 0;
-        order.forEach((item) => {
-          acc += item.price * item.quantity
-        });
+      order.forEach((item) => {
+        acc += item.price * item.quantity
+      });
       return setSubTotal(acc)
     }
     order.length === 0 && type.length === 0 ? setDisabledBtns(true) : setDisabledBtns(false);
@@ -121,7 +121,7 @@ const NewRequest = () => {
           client,
           table,
           order: order.map((item) => {
-          return {
+            return {
               id: item.id,
               item: item.item,
               price: item.price,
@@ -158,96 +158,96 @@ const NewRequest = () => {
       <h1 className='header-hall'>Novo Pedido</h1>
       <main className='menu'>
         <div className='container-menu'>
-        <section className='breakfast-menu'>
-          <h2 className='title-menu'>Menu</h2>
-          <div className='breakfast'>Café da Manhã</div>
-          <Menu
-            menu={breakfast}
-            className="image"
-            addOrder={addItemOrder}
-          />
-        </section>
-        <section className="burges-menu">
-          <div className="burgers">Hamburgers</div>
-          <div onClick={() => setIsModalVisible(true)}>
-          <Menu
-            menu={hamburger}
-            className="image"
-            addOrder={addItemOrder}
-            selectHamburguer={handleNewHamburguer}
-            type={"hamburguer"}
-          />
-          </div>
-       </section>
-      {isModalVisible && (
-        <Modal onClose={() => setIsModalVisible(false)}>
-          <ModalBurger
-          onChange={(e) => setType(e.target.value)}
-          handleAddExtra={(e) => handleAddExtra(e)}
-          addOrder={() => addItemOrder(selectedHamburguer)}
-          disabled={disabledBtns}
-           />
-        </Modal>
-      )}
-      <section className='menu-sidedishes'>
-          <div className="sidedishes">Acompanhamentos</div>
-          <Menu
-            menu={sideDishes}
-            className="image"
-            addOrder={addItemOrder}
-          />
-        </section>
-        <section className='menu-drinks'>
-          <div className='drinks'>Bebidas</div>
-          <Menu
-            menu={drinks}
-            className="image"
-            addOrder={addItemOrder}
-          />
-        </section>
-        </div>
-          <div className='order-table'> 
-            <h2 className='title-menu'> Comanda </h2>
-            <form className='dice'>
-              <Input
-                type="text"
-                value={client}
-                placeholder="Nome do cliente"
-                className="form-order"
-                onChange={(e) => setClient(e.target.value)}
+          <section className='breakfast-menu'>
+            <h2 className='title-menu'>Menu</h2>
+            <div className='breakfast'>Café da Manhã</div>
+            <Menu
+              menu={breakfast}
+              className="image"
+              addOrder={addItemOrder}
+            />
+          </section>
+          <section className="burges-menu">
+            <div className="burgers">Hamburgers</div>
+            <div onClick={() => setIsModalVisible(true)}>
+              <Menu
+                menu={hamburger}
+                className="image"
+                addOrder={addItemOrder}
+                selectHamburguer={handleNewHamburguer}
+                type={"hamburguer"}
               />
-              <Input
-                type="number"
-                value={table}
-                placeholder="Número da mesa"
-                className="form-order"
-                onChange={(e) => setTable(e.target.value)}
-              />
-            </form>
-            <div className='description'>
-              <span className='tab-item'> Item </span>
-              <span className='tab-value'> R$ </span>
             </div>
-            <Order
-              order={order}
-              addClick={(item) => AddItem(item)}
-              deleteClick={() => deleteItem(order)}
-              removeClick={(item) => removeItem(item)}
-              className="imagem"
+          </section>
+          {isModalVisible && (
+            <Modal onClose={() => setIsModalVisible(false)}>
+              <ModalBurger
+                onChange={(e) => setType(e.target.value)}
+                handleAddExtra={(e) => handleAddExtra(e)}
+                addOrder={() => addItemOrder(selectedHamburguer)}
+                disabled={disabledBtns}
+              />
+            </Modal>
+          )}
+          <section className='menu-sidedishes'>
+            <div className="sidedishes">Acompanhamentos</div>
+            <Menu
+              menu={sideDishes}
+              className="image"
+              addOrder={addItemOrder}
             />
-            <div className='subtotal'>Sub-Total: R${subTotal}</div>
-            <Button
-              name="ENVIAR PEDIDO"
-              className='submit'
-              disabled={disabledBtns}
-              onClick={() => saveOrderFirebase(client, table)}
+          </section>
+          <section className='menu-drinks'>
+            <div className='drinks'>Bebidas</div>
+            <Menu
+              menu={drinks}
+              className="image"
+              addOrder={addItemOrder}
             />
-            <Button 
+          </section>
+        </div>
+        <div className='order-table'>
+          <h2 className='title-menu'> Comanda </h2>
+          <form className='dice'>
+            <Input
+              type="text"
+              value={client}
+              placeholder="Nome do cliente"
+              className="form-order"
+              onChange={(e) => setClient(e.target.value)}
+            />
+            <Input
+              type="number"
+              value={table}
+              placeholder="Número da mesa"
+              className="form-order"
+              onChange={(e) => setTable(e.target.value)}
+            />
+          </form>
+          <div className='description'>
+            <span className='tab-item'> Item </span>
+            <span className='tab-value'> R$ </span>
+          </div>
+          <Order
+            order={order}
+            addClick={(item) => AddItem(item)}
+            deleteClick={() => deleteItem(order)}
+            removeClick={(item) => removeItem(item)}
+            className="imagem"
+          />
+          <div className='subtotal'>Sub-Total: R${subTotal}</div>
+          <Button
+            name="ENVIAR PEDIDO"
+            className='submit'
+            disabled={disabledBtns}
+            onClick={() => saveOrderFirebase(client, table)}
+          />
+          <Button
             name="CANCELAR"
             onClick={() => cancell()}
             className='remove'
-            />
-      </div>      
+          />
+        </div>
       </main>
     </div>
   );
