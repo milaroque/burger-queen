@@ -41,7 +41,7 @@ const NewRequest = () => {
   };
 
   const addItemOrder = (item) => {
-    const index = order.findIndex((i)=>(i.id === item.id))
+    const index = order.findIndex((i) => (i.id === item.id))
     if (index === -1) {
       saveOrder({
         ...item,
@@ -50,7 +50,7 @@ const NewRequest = () => {
         type,
         extra,
       });
-    } else{
+    } else {
       AddItem(order[index])
     }
     setExtra([])
@@ -152,7 +152,13 @@ const NewRequest = () => {
             text: "Pedido Enviado!",
             icon: "success",
           })
-        );
+        )
+        .catch((error) => {
+          Swal.fire({
+            text: error,
+            icon: 'warning'
+          })
+        })
     }
   };
   return (

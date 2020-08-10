@@ -5,7 +5,7 @@ import "firebase/firebase-firestore";
 import OrderCard from '../../components/orderKitchen/orderCard';
 
 const OrdersDelivery = () => {
-  
+
   const [orders, setOrders] = useState([]);
   useEffect(() => {
     firebase.firestore().collection('orders').get().then((snapshot) => {

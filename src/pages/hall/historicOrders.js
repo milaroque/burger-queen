@@ -3,6 +3,7 @@ import Nav from "../../components/nav/Nav";
 import firebase from "../../config/firebase";
 import "firebase/firebase-firestore";
 import HistoricCard from "../../components/historicCard/historicCard";
+import Swal from "sweetalert2"
 
 const HistoricOrders = () => {
   const [orders, setOrders] = useState([]);
@@ -23,7 +24,13 @@ const HistoricOrders = () => {
           return false;
         });
         setOrders(pedidos.filter((pedido) => pedido !== false));
-      });
+      })
+      .catch((error) => {
+        Swal.fire({
+          text: error,
+          icon: 'warning'
+        })
+      })
   }, []);
 
   return (

@@ -3,6 +3,7 @@ import NavKitchen from "../../components/nav/NavKitchen";
 import firebase from "../../config/firebase";
 import "firebase/firebase-firestore";
 import OrderCard from "../../components/orderKitchen/orderCard";
+import Swal from "sweetalert2";
 
 const OrdersReceived = () => {
   const [orders, setOrders] = useState([]);
@@ -23,7 +24,13 @@ const OrdersReceived = () => {
           return false;
         });
         setOrders(pedidos.filter((pedido) => pedido !== false));
-      });
+      })
+      .catch((error) => {
+        Swal.fire({
+          text: error,
+          icon: 'warning'
+        })
+      })
   }, []);
 
   const readyOrder = (id) => {
