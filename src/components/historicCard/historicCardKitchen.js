@@ -1,4 +1,5 @@
 import React from "react";
+import getTime from "../../functions/getTime";
 
 const HistoricCardKitchen = (props) => {
   return (
@@ -10,7 +11,7 @@ const HistoricCardKitchen = (props) => {
           </div>
           <div>Pedido:{item.time}</div>
           <div>Entregue:{item.preparationTime}</div>
-          <div>Tempo de preparo:</div>
+          <div>Tempo de preparo:{getTime(item.kitchen_time, item.initial_time)}</div>
         </div>
       ))}
     </>

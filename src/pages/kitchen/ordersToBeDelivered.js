@@ -21,12 +21,14 @@ const OrdersDelivery = () => {
       setOrders(pedidos.filter(pedido => pedido !== false))
     })
   }, [])
+
   const readyDelivery = (id) => {
     console.log(id)
     setOrders(orders.filter(order => order.id !== id))
     return firebase.firestore().collection('orders').doc(id).update({
       status: 'Pedido Entregue!',
-      leadTime: new Date().toLocaleString('pt-BR')
+      leadTime: new Date().toLocaleString('pt-BR'),
+      hall_time: new Date().getTime()
     });
   }
   return (

@@ -43,6 +43,7 @@ const OrdersReceived = () => {
       .update({
         status: "Pedido Pronto!",
         preparationTime: new Date().toLocaleString("pt-BR"),
+        kitchen_time:new Date().getTime()
       });
   };
 
