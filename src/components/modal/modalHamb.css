@@ -10,11 +10,12 @@
   font-weight: bold;
   align-items: center;
   display: flex;
-  width: 98vh;
+  width: 60vw;
+  height: 10vh;
   justify-content: space-evenly;
 }
 .option-two, .option-tree{
-  width: 21vh;
+  width: 10vw;
 }
 .extras{
   display: flex;
@@ -31,18 +32,46 @@
   font-weight: bold;
   font-size: 41px;
   width: 61vw;
-  height: 20vh;
+  height: 15vh;
   align-items: center;
   justify-content: center;
 }
 .bovino, .vegetariano, .frango, .extra-ovo, .extra-queijo{
   border: 0px;
-  width: 100%;
-  height: 2em;
+  width: 2vw;
+  height: 1.5em;
+  
 }
 .add{
   width: 229px;
-  height: 59px;
+  height: 7vh;
   background: #F95C4B;
   border-radius: 20px;
 }
+@media (min-width: 640px) and (max-width: 1024px) {
+  .extra-ovo,.extra-queijo{
+    width: auto;
+  }
+}
+@media (max-width: 380px){
+  .descriptionmodal{
+    font-size: 20px;
+    width: 59vw;
+  }
+  .option{
+    font-size: 12px;
+    width: 61vw;
+  }
+  .extras{
+    font-size: 14px;
+    width: 63vw;
+    height: 10vh;
+  }
+  .add{
+    width: 42vw;
+  }
+  .extra-ovo,.extra-queijo{
+    width: auto;
+  }
+}
+
