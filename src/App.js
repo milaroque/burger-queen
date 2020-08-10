@@ -6,13 +6,15 @@ import NewRequest from './pages/hall/newRequest'
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 import OrdersDelivery from './pages/hall/ordersToBeDelivered';
 import HistoricOrders from './pages/hall/historicOrders';
 import HistoricOrdersKitchen from './pages/kitchen/historicOrdersKitchen';
 import firebase from './config/firebase';
 import 'firebase/firebase-auth'
+
 
 export default function App() {
   const PrivateRoute = ({component: Component, ...rest}) => {

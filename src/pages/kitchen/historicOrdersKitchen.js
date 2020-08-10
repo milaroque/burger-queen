@@ -12,7 +12,7 @@ const HistoricOrdersKitchen = () => {
     firebase
       .firestore()
       .collection("orders")
-      orderBy('time', 'desc')
+      .orderBy('time', 'desc')
       .get()
       .then((snapshot) => {
         const pedidos = snapshot.docs.map((doc) => {
