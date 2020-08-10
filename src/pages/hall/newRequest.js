@@ -41,13 +41,18 @@ const NewRequest = () => {
   };
 
   const addItemOrder = (item) => {
-    saveOrder({
-      ...item,
-      price: extra.length > 0 ? parseInt(item.price) + extra.length : item.price,
-      quantity: 1,
-      type,
-      extra,
-    });
+    const index = order.findIndex((i)=>(i.id === item.id))
+    if (index === -1) {
+      saveOrder({
+        ...item,
+        price: extra.length > 0 ? parseInt(item.price) + extra.length : item.price,
+        quantity: 1,
+        type,
+        extra,
+      });
+    } else{
+      AddItem(order[index])
+    }
     setExtra([])
     setType("")
     setIsModalVisible(false)
