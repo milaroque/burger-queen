@@ -1,5 +1,6 @@
 import React from "react";
 import getTime from "../../functions/getTime";
+import "./historicCardKitchen.css";
 
 const HistoricCardKitchen = (props) => {
   return (

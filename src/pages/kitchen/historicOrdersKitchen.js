@@ -4,6 +4,8 @@ import firebase from "../../config/firebase";
 import "firebase/firebase-firestore";
 import HistoricCardKitchen from "../../components/historicCard/historicCardKitchen";
 import Swal from "sweetalert2";
+import "./historicOrdersKitchen.css";
+
 
 const HistoricOrdersKitchen = () => {
   const [orders, setOrders] = useState([]);
@@ -35,10 +37,12 @@ const HistoricOrdersKitchen = () => {
   }, []);
 
   return (
-    <div link="/historicOrdersKitchen">
-      <NavKitchen>Salão</NavKitchen>
-      <div>Histórico de Pedidos</div>
-      <div>
+    <div className='global-historic'>
+      <header className='historic'>
+      <NavKitchen link="/historicOrdersKitchen"></NavKitchen>
+      </header>
+      <h1 className='header-historic'>Histórico de Pedidos</h1>
+      <div className='historic-card'>
         <HistoricCardKitchen orders={orders} />
       </div>
     </div>

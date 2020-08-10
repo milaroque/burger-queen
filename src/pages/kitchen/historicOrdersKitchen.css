@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.historic{
+  background: #F6F1F1;
+}
+.global-historic{
+  height: 100vh;
+  background: rgba(246, 241, 241, 0.79);
+  overflow: hidden;
+}
+.header-historic{
+  width: 100vw;
+  height: 10vh;
+  font-size: 36px;
+  font-family: Pacifico;
+  display: flex;
+  justify-content: center;
+}
+.historic-card{
+  display: flex;
+}
+

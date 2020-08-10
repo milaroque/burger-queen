@@ -1,6 +1,7 @@
 import React from "react";
 import getTime from "../../functions/getTime";
 
+
 const HistoricCard = (props) => {
   return (
     <>
