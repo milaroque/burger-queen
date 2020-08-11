@@ -3,6 +3,7 @@ import Nav from "../../components/nav/Nav";
 import firebase from "../../config/firebase";
 import "firebase/firebase-firestore";
 import OrderCard from '../../components/orderKitchen/orderCard';
+import Swal from 'sweetalert2';
 
 const OrdersDelivery = () => {
 
@@ -20,18 +21,23 @@ firebase.firestore().collection('orders').get().then((snapshot) => {
     return false
   })
   setOrders(pedidos.filter(pedido => pedido !== false))
+})  
+.catch((error) => {
+  Swal.fire({
+    text: error,
+    icon: 'warning'
+  })
 })
 }, [])
 
 const readyDelivery = (id) => {
-  console.log(id)
   setOrders(orders.filter(order => order.id !== id))
   return firebase.firestore().collection('orders').doc(id).update({
    status: 'Pedido Entregue!',
    leadTime: new Date().toLocaleString("pt-BR"),
+   hall_time: new Date().getTime()
   });
 }
-
     return (
       <div link='/ordersReceived'>
       <Nav>
@@ -44,8 +50,6 @@ const readyDelivery = (id) => {
       onClick={readyDelivery}/>
       </div>
     </div>
-
-
     )
   }
 

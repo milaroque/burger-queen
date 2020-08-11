@@ -41,13 +41,18 @@ const NewRequest = () => {
   };
 
   const addItemOrder = (item) => {
-    saveOrder({
-      ...item,
-      price: extra.length > 0 ? parseInt(item.price) + extra.length : item.price,
-      quantity: 1,
-      type,
-      extra,
-    });
+   const index = order.findIndex((i) => (i.id === item.id))
+   if (index === -1) {
+     saveOrder({
+       ...item,
+       price: extra.length > 0 ? parseInt(item.price) + extra.length : item.price,
+       quantity: 1,
+       type,
+       extra,
+     }); 
+   }else {
+     AddItem(order[index])
+   }
     setExtra([])
     setType("")
     setIsModalVisible(false)
@@ -59,7 +64,7 @@ const NewRequest = () => {
   };
 
   const deleteItem = (item) => {
-    order.splice(order.indexOf(item.id), 1);
+    order.splice(order.indexOf(item), 1);
     setOrder([...order]);
   };
 
@@ -117,7 +122,7 @@ const NewRequest = () => {
         .collection("orders")
         .add({
           time: new Date().toLocaleString("pt-BR"),
-          leadTime: "-",
+          initial_time: new Date().getTime(),
           client,
           table,
           order: order.map((item) => {
@@ -147,7 +152,13 @@ const NewRequest = () => {
             text: "Pedido Enviado!",
             icon: "success",
           })
-        );
+        )
+        .catch((error) => {
+          Swal.fire({
+            text: error,
+            icon: 'warning'
+          })
+        })
     }
   };
   return (
@@ -231,7 +242,7 @@ const NewRequest = () => {
             <Order
               order={order}
               addClick={(item) => AddItem(item)}
-              deleteClick={() => deleteItem(order)}
+              deleteClick={(item) => deleteItem(item)}
               removeClick={(item) => removeItem(item)}
               className="imagem"
             />
