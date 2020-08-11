@@ -1,18 +1,19 @@
 .card-kitchen{
   display: block;
-  text-align: center;
-  width: 23vw;
-  height: 37vh;
-  background: #F95C4B;
-  border-radius: 20px;
-  overflow: auto;
+    text-align: center;
+    width: 20vw;
+    height: 37vh;
+    background: #F95C4B;
+    border-radius: 10px;
+    overflow: auto;
+
 }
 .command{
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
-  width: 20vw;
+  width: 15vw;
   height: 6vh;
   background: #FFFCFC;
   border: 1px solid rgba(216, 84, 84, 0.308); 
@@ -21,14 +22,14 @@
   margin-right: 0px;
   justify-content: center;
   align-items: center;
-  width: 12vw;
+  width: 10vw;
   height: 8vh;
   background: #D9D9D9;
   border-radius: 20px;
 }
-.head{
+.head__order-card{
   display:flex;
-  width: 23vw;
+  width: 18vw;
   height: 8vh;
   font-family: Fira Sans;
   font-weight: bold;

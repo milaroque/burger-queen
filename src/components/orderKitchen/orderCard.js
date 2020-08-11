@@ -7,7 +7,7 @@ const OrderCard = (props) => {
     <>
       {props.orders.map((item) => (
         <div className='card-kitchen' key={item.id}>
-          <div className='head'>Cliente: {item.client} Mesa:{item.table} Pedido:{item.time}</div>
+          <div className='head__order-card'>Cliente: {item.client} Mesa:{item.table} Pedido:{item.time}</div>
           {item.order.map((i) => (
             <div className='command'>
               <div key={i.id}>{i.quantity}x {i.item} {i.type} {JSON.parse(i.extra)}</div>

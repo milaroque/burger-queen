@@ -39,11 +39,15 @@ const HistoricOrdersKitchen = () => {
   return (
     <div className='global-historic'>
       <header className='historic'>
-      <NavKitchen link="/historicOrdersKitchen"></NavKitchen>
+        <NavKitchen link="/historicOrdersKitchen"></NavKitchen>
       </header>
       <h1 className='header-historic'>Histórico de Pedidos</h1>
-      <div className='historic-card'>
-        <HistoricCardKitchen orders={orders} />
+      <h2 className='head'>Cozinha</h2>
+      <div className='container-historic'>
+        <div className='historic-card'>
+          <HistoricCardKitchen
+            orders={orders} />
+        </div>
       </div>
     </div>
   );

@@ -51,11 +51,13 @@ const OrdersReceived = () => {
   return (
     <div className='global-kitchen'>
       <header className='kitchen'>
-      <NavKitchen link="/ordersReceived"></NavKitchen>
+        <NavKitchen link="/ordersReceived"></NavKitchen>
       </header>
       <h1 className='header-kitchen'>Pedidos à Preparar</h1>
       <div className='order-card-kitchen'>
-        <OrderCard orders={orders} onClick={readyOrder} />
+        <OrderCard
+        orders={orders} 
+        onClick={readyOrder} />
       </div>
     </div>
   );

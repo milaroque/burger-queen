@@ -4,18 +4,29 @@ import "./historicCardKitchen.css";
 
 const HistoricCardKitchen = (props) => {
   return (
-    <>
+    <div className='container__inner'>
       {props.orders.map((item) => (
-        <div key={item.id}>
-          <div>
-            Cliente: {item.client} Mesa:{item.table}
+        <div className='card__inner' >
+          <div className='card__list' key={item.id}>
+            <div className='itens__client'>
+              Cliente: {item.client}
+              <li>
+                Mesa: {item.table}
+              </li>
+            </div>
+            <div className='itens__card'>
+              <div>Pedido:{item.time}</div>
+              <div>Entregue:{item.preparationTime}</div>
+            </div>
+            <div className='itens__time'>Tempo de Atendimento:
+            <li>
+              {getTime(item.kitchen_time, item.initial_time)}
+            </li>
+            </div>
           </div>
-          <div>Pedido:{item.time}</div>
-          <div>Entregue:{item.preparationTime}</div>
-          <div>Tempo de preparo:{getTime(item.kitchen_time, item.initial_time)}</div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 
