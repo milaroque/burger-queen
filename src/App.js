@@ -7,7 +7,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect,
 } from "react-router-dom";
 import OrdersDelivery from './pages/hall/ordersToBeDelivered';
 import HistoricOrders from './pages/hall/historicOrders';
@@ -21,7 +20,7 @@ export default function App() {
         <Route {...rest} render={props => (
             firebase.auth().currentUser ?
                 <Component {...props} />
-            : <Redirect to='/' /> 
+            : window.location.href = "https://milaroque.github.io/flappy-burger/src"
         )} />
     );
     };

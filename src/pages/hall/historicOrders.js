@@ -3,10 +3,7 @@ import Nav from "../../components/nav/Nav";
 import firebase from "../../config/firebase";
 import "firebase/firebase-firestore";
 import HistoricCard from "../../components/historicCard/historicCard";
-<<<<<<< HEAD
 import Swal from "sweetalert2";
-=======
->>>>>>> eb09db8c21c4f50c7a04662d5668afd82e97c9d1
 
 const HistoricOrders = () => {
   const [orders, setOrders] = useState([]);

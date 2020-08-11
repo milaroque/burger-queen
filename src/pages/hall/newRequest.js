@@ -41,18 +41,18 @@ const NewRequest = () => {
   };
 
   const addItemOrder = (item) => {
-   const index = order.findIndex((i) => (i.id === item.id))
-   if (index === -1) {
-     saveOrder({
-       ...item,
-       price: extra.length > 0 ? parseInt(item.price) + extra.length : item.price,
-       quantity: 1,
-       type,
-       extra,
-     }); 
-   }else {
-     AddItem(order[index])
-   }
+    const index = order.findIndex((i) => (i.id === item.id))
+    if (index === -1) {
+      saveOrder({
+        ...item,
+        price: extra.length > 0 ? parseInt(item.price) + extra.length : item.price,
+        quantity: 1,
+        type,
+        extra,
+      });
+    } else {
+      AddItem(order[index])
+    }
     setExtra([])
     setType("")
     setIsModalVisible(false)
@@ -189,12 +189,23 @@ const NewRequest = () => {
                 type={"hamburguer"}
               />
             </div>
-            <Order
-              order={order}
-              addClick={(item) => AddItem(item)}
-              deleteClick={(item) => deleteItem(item)}
-              removeClick={(item) => removeItem(item)}
-              className="imagem"
+          </section>
+          {isModalVisible && (
+            <Modal onClose={() => setIsModalVisible(false)}>
+              <ModalBurger
+                onChange={(e) => setType(e.target.value)}
+                handleAddExtra={(e) => handleAddExtra(e)}
+                addOrder={() => addItemOrder(selectedHamburguer)}
+                disabled={disabledBtns}
+              />
+            </Modal>
+          )}
+          <section className='menu-sidedishes'>
+            <div className="sidedishes">Acompanhamentos</div>
+            <Menu
+              menu={sideDishes}
+              className="image"
+              addOrder={addItemOrder}
             />
           </section>
           <section className='menu-drinks'>
@@ -231,7 +242,7 @@ const NewRequest = () => {
           <Order
             order={order}
             addClick={(item) => AddItem(item)}
-            deleteClick={() => deleteItem(order)}
+            deleteClick={(item) => deleteItem(item)}
             removeClick={(item) => removeItem(item)}
             className="imagem"
           />
