@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.kitchen{
+  background: #F6F1F1;
+}
+.global-kitchen{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: rgba(246, 241, 241, 0.79);
+  overflow: hidden;
+}
+.header-kitchen{
+  width: 100vw;
+  height: 14vh;
+  font-size: 36px;
+  font-family: Pacifico;
+  display: flex;
+  justify-content: center;
+  
+}
+.order-card-kitchen{
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: space-around;
+
+}
+

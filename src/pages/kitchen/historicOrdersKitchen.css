@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.historic{
+  background: #F6F1F1;
+}
+.global-historic{
+  width: 100vw;
+  height: 100vh;
+  background: rgba(246, 241, 241, 0.79);
+  overflow: auto;
+}
+.header-historic, .head{
+  width: 100vw;
+  height: 10vh;
+  font-size: 36px;
+  font-family: Pacifico;
+  display: flex;
+  justify-content: center;
+}
+.head{
+  font-size: 24px;
+  height: 7vh;
+}
+.historic-card{
+  margin: auto;
+  overflow: auto;
+}
+.container-historic{
+  display: flex;
+}
+

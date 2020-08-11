@@ -104,7 +104,7 @@ const Login = () => {
             onClick={signIn}
           />
           <p onClick={() => setIsModalVisible(true)}>
-            Ainda não tem cadastro? Registre-se aqui!
+            Ainda não tem cadastro? Registre-se AQUI!
           </p>
           </form>
           {isModalVisible ? (

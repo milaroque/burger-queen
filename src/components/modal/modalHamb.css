@@ -1,8 +1,77 @@
 .egg, .cheese {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
+}
+.btncor{
+  background-color: green;
+}
+.option, .option-two, .option-tree{
+  font-family: Fira Sans;
+  font-weight: bold;
+  align-items: center;
+  display: flex;
+  width: 60vw;
+  height: 10vh;
+  justify-content: space-evenly;
+}
+.option-two, .option-tree{
+  width: 10vw;
+}
+.extras{
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  height: 15vh;
+}
+.modalburger{
+  display:inline-block;
+}
+.descriptionmodal{
+  display: flex;
+  font-family: Pacifico;
+  font-weight: bold;
+  font-size: 41px;
+  width: 61vw;
+  height: 15vh;
+  align-items: center;
+  justify-content: center;
+}
+.bovino, .vegetariano, .frango, .extra-ovo, .extra-queijo{
+  border: 0px;
+  width: 2vw;
+  height: 1.5em;
+  
+}
+.add{
+  width: 229px;
+  height: 7vh;
+  background: #F95C4B;
+  border-radius: 20px;
+}
+@media (min-width: 640px) and (max-width: 1024px) {
+  .extra-ovo,.extra-queijo{
+    width: auto;
+  }
+}
+@media (max-width: 380px){
+  .descriptionmodal{
+    font-size: 20px;
+    width: 59vw;
+  }
+  .option{
+    font-size: 12px;
+    width: 61vw;
+  }
+  .extras{
+    font-size: 14px;
+    width: 63vw;
+    height: 10vh;
+  }
+  .add{
+    width: 42vw;
+  }
+  .extra-ovo,.extra-queijo{
+    width: auto;
+  }
 }
 
-.btncor{
-background-color: green;
-}

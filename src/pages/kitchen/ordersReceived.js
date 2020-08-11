@@ -4,6 +4,7 @@ import firebase from "../../config/firebase";
 import "firebase/firebase-firestore";
 import OrderCard from "../../components/orderKitchen/orderCard";
 import Swal from "sweetalert2";
+import "./ordersReceived.css";
 
 const OrdersReceived = () => {
   const [orders, setOrders] = useState([]);
@@ -43,16 +44,20 @@ const OrdersReceived = () => {
       .update({
         status: "Pedido Pronto!",
         preparationTime: new Date().toLocaleString("pt-BR"),
-        kitchen_time: new Date().getTime()
+        kitchen_time:new Date().getTime()
       });
   };
 
   return (
-    <div link="/ordersReceived">
-      <NavKitchen>Cozinha</NavKitchen>
-      <div>Pedidos à Preparar</div>
-      <div>
-        <OrderCard orders={orders} onClick={readyOrder} />
+    <div className='global-kitchen'>
+      <header className='kitchen'>
+        <NavKitchen link="/ordersReceived"></NavKitchen>
+      </header>
+      <h1 className='header-kitchen'>Pedidos à Preparar</h1>
+      <div className='order-card-kitchen'>
+        <OrderCard
+        orders={orders} 
+        onClick={readyOrder} />
       </div>
     </div>
   );
