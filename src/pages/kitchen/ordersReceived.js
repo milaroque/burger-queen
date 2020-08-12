@@ -54,10 +54,12 @@ const OrdersReceived = () => {
         <NavKitchen link="/ordersReceived"></NavKitchen>
       </header>
       <h1 className='header-kitchen'>Pedidos à Preparar</h1>
+      <div className='container__card-kitchen'>
       <div className='order-card-kitchen'>
         <OrderCard
         orders={orders} 
         onClick={readyOrder} />
+      </div>
       </div>
     </div>
   );

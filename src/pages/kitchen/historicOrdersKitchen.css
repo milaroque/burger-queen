@@ -12,14 +12,16 @@
   overflow: auto;
 }
 .header-historic, .head{
+  margin-top: 80px;
   width: 100vw;
-  height: 10vh;
+  height: 9vh;
   font-size: 36px;
   font-family: Pacifico;
   display: flex;
   justify-content: center;
 }
 .head{
+  margin-top: 0px;
   font-size: 24px;
   height: 7vh;
 }
@@ -30,4 +32,14 @@
 .container-historic{
   display: flex;
 }
+@media (max-width: 380px){
+  .header-historic{
+    margin-top: 58px;
+    font-size: 26px;
+  }
+  .head{
+    margin-top: 6px;
+    font-size: 18px;
+  }
 
+}
