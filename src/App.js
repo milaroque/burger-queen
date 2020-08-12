@@ -7,7 +7,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
 } from "react-router-dom";
 import OrdersDelivery from './pages/hall/ordersToBeDelivered';
 import HistoricOrders from './pages/hall/historicOrders';
@@ -15,17 +14,17 @@ import HistoricOrdersKitchen from './pages/kitchen/historicOrdersKitchen';
 import firebase from './config/firebase';
 import 'firebase/firebase-auth'
 
-
 export default function App() {
   const PrivateRoute = ({component: Component, ...rest}) => {
     return (
         <Route {...rest} render={props => (
             firebase.auth().currentUser ?
                 <Component {...props} />
-            : <Redirect to="/login" />
+            : window.location.href = "https://milaroque.github.io/flappy-burger/src"
         )} />
     );
     };
+    
   return (
     <Router>
         <Switch>
