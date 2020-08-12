@@ -10,24 +10,45 @@
   flex-direction: column;
   height: 100vh;
   background: rgba(246, 241, 241, 0.79);
-  overflow: hidden;
 }
 .header-kitchen{
   width: 100vw;
   height: 14vh;
+  margin-top: 89px;
   font-size: 36px;
   font-family: Pacifico;
   display: flex;
   justify-content: center;
-  
 }
 .order-card-kitchen{
   flex-wrap: wrap;
   width: 100vw;
   height: 100vh;
-
   display: flex;
   justify-content: space-around;
-
 }
-
+.container__card-kitchen{
+  width: 100vw;
+  display:flex;
+  justify-content: center;
+  overflow: auto;
+}
+@media (min-width: 640px) and (max-width: 1024px) {
+  .header-kitchen{
+    margin-top: 108px;
+    width: 100vw;
+    height: 10vh;
+  }
+  .order-card-kitchen{
+    width: 100vw;
+  }
+}
+@media (max-width: 380px){
+  .header-kitchen{
+    margin-top: 58px;
+    font-size: 24px;
+  }
+  .order-card-kitchen{
+    width: 83vw;
+  }
+}

@@ -1,42 +1,75 @@
 .card__inner{
   margin-bottom: 20px;
-    display: flex;
-    width: 50vw;
-    height: 18vh;
-    background: #F95C4B;
-    border-radius: 17px;
+  display: flex;
+  width: 50vw;
+  height: 18vh;
+  background: #F95C4B;
+  border-radius: 17px;
+}
+.card__list{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin: auto;
+  width: 48vw;
+  height: 14vh;
+  background: #FFFCFC;
+  border-radius: 6px;
+  font-family: Fira Sans;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 24px;
+}
+.itens__client, .itens__card, .itens__time{
+  margin-top: 17px;
+  width: 20%;
+  height: 0vh;
+}
+.itens__card{
+  width: 35%;
+  height: 2vh;
+}
+.itens__time{
+  width: 35%;
+  height: 2vh;
+}
+  li{
+  list-style-type: none;
+}
+@media (min-width: 640px) and (max-width: 1024px) {
+  .card__inner{
+    width: 77vw;
+    height: 14vh;
   }
   .card__list{
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    margin: auto;
-    width: 48vw;
-    height: 14vh;
-    background: #FFFCFC;
-    border-radius: 6px;
-    font-family: Fira Sans;
-font-style: normal;
-font-weight: bold;
-font-size: 17px;
-line-height: 24px;
+    width: 74vw;
+    height: 12vh;
   }
-  .itens__client, .itens__card, .itens__time{
-    margin-top: 17px;
-    width: 20%;
-    height: 0vh;
-    
+  .itens__client{
+    margin-top: 21px;
+  }
+}
+@media (max-width: 380px){
+  .card__inner{
+    width: 96vw;
+    height: 22vh;
+  }
+  .card__list{
+    width: 91vw;
+    height: 20vh;
+    font-size: 12px;
+  }
+  .itens__client{
+    margin-top: 10px;
+    width: 19%;
   }
   .itens__card{
-    width: 35%;
-    height: 2vh;
-
+    width: 31%;
+    margin-top: 10px;
   }
   .itens__time{
-    width: 35%;
-    height: 2vh;
+    width: 27%;
+    margin-top: 10px;
+  }
 
-  }
-  li{
-    list-style-type: none;
-  }
+}

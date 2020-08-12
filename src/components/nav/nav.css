@@ -9,7 +9,7 @@
   height: 40px;
 }
 .logo-nav{
-  max-width: 7em;
+  max-width: 120px;
   height: 12vh;
 }
 .btn-exit{
@@ -21,6 +21,7 @@
   background-color: #fff !important;
 }
 .menu-buguer{
+  position: fixed;
   width: 100%;
   height: 10vh;
   display: flex;
@@ -73,8 +74,8 @@
 }
 @media (max-width: 380px){
   .pages{
-    width: 35vw;
-    height: 4vh;
+    width: 34vw;
+    height: 8vh;
   }
   .listener{
     padding-left: 11px;
@@ -82,6 +83,16 @@
   .btn-exit{
     margin-right: 35px;
   }
+  .menu-hamburguer{
+    max-width: 29px;
+    width: 100vw;
+    height: 3vh;
+  }
+  .exit-login{
+    max-width: 39px;
+    height: 34px;
+  }
 }
+
 
 
