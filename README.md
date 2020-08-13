@@ -59,6 +59,6 @@ A aplicação é uma _Single Page App_, pensada específicamente para rodar em *
 
 ## 5. Desenvolvedoras
 
-- Alessandra Marinho [Alessandra](https://github.com/alessandramarinho)
+- [Alessandra Marinho ](https://github.com/alessandramarinho)
 
-- Camila Roque [Camila](https://github.com/milaroque)
+- [Camila Roque](https://github.com/milaroque)
