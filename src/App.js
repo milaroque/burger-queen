@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Login from './pages/login/login.js'
+import Login from './pages/login/login'
 import OrdersReceived from './pages/kitchen/ordersReceived'
 import NewRequest from './pages/hall/newRequest'
 import {
