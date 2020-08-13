@@ -11,7 +11,6 @@ import "firebase/firebase-firestore";
 import Input from "../../components/input/Input";
 import "./newRequest.css";
 import ModalBurger from "../../components/modal/modalHamb";
-import Footer from "../../components/footer/footer";
 
 const NewRequest = () => {
   const [breakfast, setBreakfast] = useState([]);
@@ -163,7 +162,6 @@ const NewRequest = () => {
     }
   };
   return (
-    <>
     <div className='global'>
       <header className='hall'>
         <Nav link='/newRequest'></Nav>
@@ -263,8 +261,6 @@ const NewRequest = () => {
         </div>
       </main>
     </div>
-    <Footer />
-    </>
   );
 };
 

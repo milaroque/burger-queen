@@ -32,6 +32,15 @@
 .container-historic{
   display: flex;
 }
+@media (min-width: 640px) and (max-width: 1024px) {
+  .header-historic{
+    height: 6vh;
+    margin-top: 111px;
+  }
+  .head{
+    height: 6vh;
+  }
+}
 @media (max-width: 380px){
   .header-historic{
     margin-top: 58px;

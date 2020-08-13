@@ -7,7 +7,7 @@
 }
 .menu{
   background: rgba(246, 241, 241, 0.79);
-  height: 75vh;
+  height: 79vh;
   justify-content: space-around;
   font-size: 30px;
   display: flex;
@@ -22,7 +22,7 @@
   font-size: 36px;
   font-family: Pacifico;
   display: flex;
-  margin-top: 57px;
+  margin-top: 60px;
   justify-content: center;
 }
 .breakfast, .burgers, .drinks, .sidedishes{
@@ -50,7 +50,7 @@
   font-size: 28px;
 }
 .global{
-  height: 100vh;
+  height: 90vh;
   background: rgba(246, 241, 241, 0.79);
 }
 .form-order{
@@ -118,6 +118,9 @@
   }
   .title-menu{
     font-size: 26px;
+  }
+  .header-hall{
+    margin-top: 100px;
   }
 }
 @media (max-width: 380px){
