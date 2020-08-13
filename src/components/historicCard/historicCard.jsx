@@ -2,19 +2,16 @@ import React from 'react';
 import getTime from '../../functions/getTime';
 import './historicCardKitchen.css';
 
-const { orders } = this.props;
-const HistoricCard = () => (
+const HistoricCard = (props) => (
   <div className="container__inner">
-    {orders.map((item) => (
+    {props.orders.map((item) => (
       <div className="card__inner" key={item.id}>
         <div className="card__list">
           <div className="itens__client">
             Cliente:
-            {' '}
             {item.client}
             <li>
               Mesa:
-              {' '}
               {item.table}
             </li>
           </div>
