@@ -84,6 +84,7 @@ const Login = () => {
         <form className="form-login">
           <Input
             type="email"
+            data="email"
             id="email"
             className="input-login"
             value={email}
@@ -93,6 +94,7 @@ const Login = () => {
           <div className='eyes-devil'>
           <Input
             type={showPassword  ? "text" : "password"}
+            data="password"
             id="password"
             className="input-password"
             value={password}
