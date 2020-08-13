@@ -21,8 +21,8 @@ const NavKitchen = () => {
         </button>
         {open && (
           <div>
-            <Link to="/ordersToBeDelivered">
-              <button type="submit" className="pages">Pedidos à Entregar</button>
+            <Link to="/ordersReceived">
+              <button type="submit" className="pages">Pedidos à Preparar</button>
             </Link>
             <Link to="/historicOrdersKitchen">
               <button type="submit" className="pages">Histórico de Pedidos</button>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Swal from 'sweetalert2';
 import Nav from '../../components/nav/Nav';
 import firebase from '../../config/firebase';
 import 'firebase/firebase-firestore';
@@ -14,9 +13,8 @@ const HistoricOrders = () => {
       .firestore()
       .collection('orders')
       .orderBy('time', 'desc')
-      .get()
-      .then((snapshot) => {
-        const pedidos = snapshot.docs.map((doc) => {
+      .onSnapshot((querySnapshot) => {
+        const pedidos = querySnapshot.docs.map((doc) => {
           if (doc.data().status === 'Pedido Entregue!') {
             return {
               id: doc.id,
@@ -27,12 +25,6 @@ const HistoricOrders = () => {
         });
         setOrders(pedidos.filter((pedido) => pedido !== false));
       })
-      .catch((error) => {
-        Swal.fire({
-          text: error,
-          icon: 'warning',
-        });
-      });
   }, []);
 
   return (

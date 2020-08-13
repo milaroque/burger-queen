@@ -18,7 +18,7 @@ const HistoricCardKitchen = (props) => {
               <div>Pedido:{item.time}</div>
               <div>Entregue:{item.preparationTime}</div>
             </div>
-            <div className='itens__time'>Tempo de Atendimento:
+            <div className='itens__time'>Tempo de Preparo:
             <li>
               {getTime(item.kitchen_time, item.initial_time)}
             </li>

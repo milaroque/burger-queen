@@ -24,6 +24,7 @@
   display: flex;
   margin-top: 60px;
   justify-content: center;
+  margin-top: 60px
 }
 .breakfast, .burgers, .drinks, .sidedishes{
   font-size: 17px;
@@ -103,6 +104,9 @@
   }
   .menu{
     height: 80vh;
+  }
+  .header-hall {
+    margin-top: 100px;
   }
   .order-table{
     width: 47vw;

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Swal from 'sweetalert2';
 import NavKitchen from '../../components/nav/NavKitchen';
 import firebase from '../../config/firebase';
 import 'firebase/firebase-firestore';
@@ -13,9 +12,8 @@ const OrdersReceived = () => {
     firebase
       .firestore()
       .collection('orders')
-      .get()
-      .then((snapshot) => {
-        const pedidos = snapshot.docs.map((doc) => {
+      .onSnapshot((querySnapshot) => {
+        const pedidos = querySnapshot.docs.map((doc) => {
           if (doc.data().status === 'Em Preparo!') {
             return {
               id: doc.id,
@@ -26,12 +24,6 @@ const OrdersReceived = () => {
         });
         setOrders(pedidos.filter((pedido) => pedido !== false));
       })
-      .catch((error) => {
-        Swal.fire({
-          text: error,
-          icon: 'warning',
-        });
-      });
   }, []);
 
   const readyOrder = (id) => {

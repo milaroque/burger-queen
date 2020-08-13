@@ -6,48 +6,42 @@ export const getBreak = () => {
     return new Promise((resolve) => {
       firebase.firestore().collection('breakfast')
       .orderBy('item', 'asc')
-        .get()
-        .then((snapshot) => {
-          const breakfast = snapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data()
-          })
-          )
-          resolve(breakfast);
-  
+      .onSnapshot(querySnapshot => {
+        const breakfast = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data()
         })
+        )
+        resolve(breakfast);
+      })
     })
   }
 
   export const getHamb= () => {
     return new Promise((resolve) => {
       firebase.firestore().collection('hamburger')
-        .get()
-        .then((snapshot) => {
-          const hamburger = snapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data()
-          })
-          )
-          resolve(hamburger);
-  
+      .onSnapshot(querySnapshot => {
+        const hamburger = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data()
         })
+        )
+        resolve(hamburger);
+      })
     })
   }
   export const getSideDishes= () => {
     return new Promise((resolve) => {
       firebase.firestore().collection('side-dishes')
       .orderBy('item', 'asc')
-        .get()
-        .then((snapshot) => {
-          const sideDishes = snapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data()
-          })
-          )
-          resolve(sideDishes);
-  
+      .onSnapshot(querySnapshot => {
+        const sideDishes = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data()
         })
+        )
+        resolve(sideDishes);
+      })
     })
   }
 
@@ -55,16 +49,14 @@ export const getBreak = () => {
     return new Promise((resolve) => {
       firebase.firestore().collection('drinks')
       .orderBy('item', 'desc')
-        .get()
-        .then((snapshot) => {
-          const drinks = snapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data()
-          })
-          )
-          resolve(drinks);
-  
+      .onSnapshot(querySnapshot => {
+        const drinks = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data()
         })
+        )
+        resolve(drinks);
+      })
     })
   }
 
