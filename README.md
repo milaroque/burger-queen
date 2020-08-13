@@ -1,68 +1,64 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Burger Queen
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Índice
 
-### `npm start`
+- [1. Aplicação](#1-aplicação)
+- [2. Protótipo do projeto](#2-protótipo-do-projeto)
+- [3. Desenvolvimento Front-end](#3-desenvolvimento-front-end)
+- [4. Considerações gerais](#4-considerações-gerais)
+- [5. Desenvolvedoras](#7-desenvolvedoras)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## 1. Aplicação
 
-### `npm test`
+Neste projeto foi introduzido o uso de _frameworks_ e _bibliotecas_ para JavaScript como uma ferramenta que facilite a mudança da interface e o estado de modo sincronizado. O _biblioteca_ utilizado foi **React.js**
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+O objetivo foi construir uma _web app_ para _tablet_ que contemple um projeto sob demanda de uma hamburgueria. O garçom deve ser capaz de fazer pedidos do cliente e a cozinha capaz de ver estes pedidos e marcá-los quando estiverem prontos para que o garçom fique ciente.
 
-### `npm run build`
+Para acessar a _web app_ [clique aqui](https://burger-queen-lab-d4315.web.app)!
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## 2. Protótipo do projeto
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para o desenvolvimento do MVP utilizamos a ferramenta Figma para desenharmos a aparência do layout.
 
-### `npm run eject`
+![protótipo](src/assets/layout/pages.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 3. Desenvolvimento Front-end
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+A aplicação é uma _Single Page App_, pensada específicamente para rodar em **tablets**, porém se adapta tanto para Desktops quando para modelos Mobile, tornando-a **responsiva**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Tela Tablet**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![Home](src/assets/layout/tela_home.png)
 
-## Learn More
+![Register](src/assets/layout/register.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Menu](src/assets/layout/pedido.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Entrega](src/assets/layout/pedido_entregar.png)
 
-### Code Splitting
+## 4. Considerações gerais
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Ferramentas e Bibliotecas
 
-### Analyzing the Bundle Size
+* JavaScript (ES6 +)
+* React.js
+* React Router Dom
+* React Hooks
+* Firebase
+* Sweet Alert 2
+* CSS3
+* Eslint
+* Trello
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+---
 
-### Making a Progressive Web App
+## 5. Desenvolvedoras
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- [Alessandra Marinho ](https://github.com/alessandramarinho)
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- [Camila Roque](https://github.com/milaroque)
