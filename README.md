@@ -25,7 +25,7 @@ Para acessar a _web app_ [clique aqui](https://burger-queen-lab-d4315.web.app)!
 
 Para o desenvolvimento do MVP utilizamos a ferramenta Figma para desenharmos a aparência do layout.
 
-![protótipo]()
+![protótipo](src/assets/layout/pages.png)
 
 ## 3. Desenvolvimento Front-end
 
@@ -33,13 +33,13 @@ A aplicação é uma _Single Page App_, pensada específicamente para rodar em *
 
 **Tela Tablet**
 
-![Home]()
+![Home](src/assets/layout/tela_home.png)
 
-![Register]()
+![Register](src/assets/layout/register.png)
 
-![Menu]()
+![Menu](src/assets/layout/pedido.png)
 
-![Entrega]()
+![Entrega](src/assets/layout/pedido_entregar.png)
 
 ## 4. Considerações gerais
 
