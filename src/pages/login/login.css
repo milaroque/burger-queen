@@ -29,6 +29,19 @@ figure{
   font-size: 20px;
   outline: none;
 }
+.input-password{
+  margin: 16px 0px 30px 93px;
+  display: block;
+  border: solid 1.5px #3c2415;
+  border-radius: 40px;
+  box-sizing: border-box;
+  box-shadow: 3px 21px 13px rgba(216, 84, 84, 0.308);
+  height: 7vh;
+  padding-left: 28px;
+  width: 35vw;
+  font-size: 20px;
+  outline: none;
+}
 .button-loggin{
   font-size: 20px;
   height: 2.5vw;
@@ -40,10 +53,13 @@ figure{
   cursor: pointer;
 outline: none;
 }
+.eyes-devil {
+  position: relative;
+}
 .eye {
   position: absolute;
-  top: 47%;
-  right: 10%;
+  top: 33.5%;
+  right: 18%;
 }
 .eye:hover {
   color: #d13f34;
@@ -89,13 +105,17 @@ p{
     width: 85%;
     font-size: 24px;
   }
+  .input-password {
+    margin: 16px 0px 30px 1px;
+    width: 85vw;
+    font-size: 23px;
+  }
   .form-login{
     display: contents;
   }
   .eye{
-    top: 65.5%;
-    right: 13%;
-    width: 12px;
+    top: 39.5%;
+    right: 4%;
   }
   .button-loggin{
     margin-top: 69px;
@@ -117,7 +137,7 @@ p{
     display: flex;
     justify-content: center;
     width: 100vw;
-    height: 50vh;
+    height: 44vh;
   }
   .div{
     flex-direction: column;
@@ -132,16 +152,21 @@ p{
     width: 87%;
     font-size: 17px;
   }
+  .input-password {
+    margin: 16px 0px 30px 1px;
+    width: 85vw;
+    font-size: 17px;
+    height: 8.3vh;
+  }
   .form-login{
     display: contents;
   }
   .eye{
-    top: 61.5%;
-    right: 16%;
-    width: 12px;
+    top: 34%;
+    right: 6%;
   }
   .button-loggin{
-    margin-top: 33px;
+    margin-top: 0;
     height: 34px;
     width: 40%;
     font-size: 19px;

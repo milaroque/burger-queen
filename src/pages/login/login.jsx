@@ -5,6 +5,7 @@ import Image from "../../components/image/image";
 import logo from "../../assets/logo.png";
 import Modal from "../../components/modal/modal";
 import Register from "../register/register";
+import Footer from '../../components/footer/footer'
 import firebase from "../../config/firebase.js";
 import "firebase/firebase-auth";
 import "firebase/firebase-firestore";
@@ -74,6 +75,7 @@ const Login = () => {
   };
 
   return (
+    <>
     <div className="div">
       <figure>
         <Image src={logo} alt="logo" class="logo-login" />
@@ -88,15 +90,17 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Digite seu email"
           />
+          <div className='eyes-devil'>
           <Input
             type={showPassword  ? "text" : "password"}
             id="password"
-            className="input-login"
+            className="input-password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Digite sua senha"
           />
           <i className="eye" onClick={() => setShowPassword(!showPassword)}>{eyes}</i>
+          </div>
           <Button
             id="login"
             className="button-loggin"npm 
@@ -115,6 +119,8 @@ const Login = () => {
         
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 
