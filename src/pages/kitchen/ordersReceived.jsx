@@ -4,7 +4,6 @@ import firebase from '../../config/firebase';
 import 'firebase/firebase-firestore';
 import OrderCard from '../../components/orderKitchen/orderCard';
 import './ordersReceived.css';
-import Footer from '../../components/footer/footer';
 
 const OrdersReceived = () => {
   const [orders, setOrders] = useState([]);
@@ -41,7 +40,6 @@ const OrdersReceived = () => {
   };
 
   return (
-    <>
       <div className="global-kitchen">
         <header className="kitchen">
           <NavKitchen link="/ordersReceived" />
@@ -56,8 +54,6 @@ const OrdersReceived = () => {
           </div>
         </div>
       </div>
-      <Footer />
-    </>
   );
 };
 
