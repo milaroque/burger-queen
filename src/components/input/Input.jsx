@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Input = ({type, name, checked, onChange, id, className, value, placeholder}) => {
-return <input type={type} name={name} checked={checked} onChange={onChange} id={id} className={className} value={value} placeholder={placeholder}></input>
+const Input = ({type, name, data, checked, onChange, id, className, value, placeholder}) => {
+return <input type={type} name={name} data-testid={data} checked={checked} onChange={onChange} id={id} className={className} value={value} placeholder={placeholder}></input>
 
 }
 

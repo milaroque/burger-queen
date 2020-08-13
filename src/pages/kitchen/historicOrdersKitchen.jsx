@@ -3,7 +3,6 @@ import NavKitchen from "../../components/nav/NavKitchen";
 import firebase from "../../config/firebase";
 import "firebase/firebase-firestore";
 import HistoricCardKitchen from "../../components/historicCard/historicCardKitchen";
-import Swal from "sweetalert2";
 import "./historicOrdersKitchen.css";
 
 
@@ -15,9 +14,8 @@ const HistoricOrdersKitchen = () => {
       .firestore()
       .collection("orders")
       .orderBy('time', 'desc')
-      .get()
-      .then((snapshot) => {
-        const pedidos = snapshot.docs.map((doc) => {
+      .onSnapshot((querySnapshot) => {
+        const pedidos = querySnapshot.docs.map((doc) => {
           if (doc.data().status === "Pedido Entregue!") {
             return {
               id: doc.id,
@@ -27,12 +25,6 @@ const HistoricOrdersKitchen = () => {
           return false;
         });
         setOrders(pedidos.filter((pedido) => pedido !== false));
-      })
-      .catch((error) => {
-        Swal.fire({
-          text: error,
-          icon: 'warning'
-        })
       })
   }, []);
 
