@@ -26,5 +26,17 @@ describe('Tests for Input component', () => {
     )
     expect(password.value).toEqual('password')
 })
+it("Verify if there is one button inside Login", () => {
+ const { container } = render(<BrowserRouter><Route exact path="/" component={Login} /> </BrowserRouter>)
+  const number = container.getElementsByTagName("button").length;
+  expect(number).toBe(1);
+})
+it('Verify button event onClick', async () => {
+  const {getByTestId} = render(<BrowserRouter><Route exact path="/" component={Login} /> </BrowserRouter>)
+  const btnNode = await waitForElement(
+    () => getByTestId('form-btn')
+  )
+  fireEvent.click(btnNode)
+})
 
 })
