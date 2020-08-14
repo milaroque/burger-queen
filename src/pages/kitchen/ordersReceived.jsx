@@ -12,6 +12,7 @@ const OrdersReceived = () => {
     firebase
       .firestore()
       .collection('orders')
+      .orderBy('time', 'asc')
       .onSnapshot((querySnapshot) => {
         const pedidos = querySnapshot.docs.map((doc) => {
           if (doc.data().status === 'Em Preparo!') {

@@ -10,7 +10,11 @@ const OrdersDelivery = () => {
 
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    firebase.firestore().collection('orders').onSnapshot((querySnapshot) => {
+    firebase
+    .firestore()
+    .collection('orders')
+    .orderBy('time', 'asc')
+    .onSnapshot((querySnapshot) => {
       const pedidos = querySnapshot.docs.map((doc) => {
         if (doc.data().status === 'Pedido Pronto!') {
           return ({
