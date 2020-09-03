@@ -31,15 +31,19 @@ Para o desenvolvimento do MVP utilizamos a ferramenta Figma para desenharmos a a
 
 A aplicação é uma _Single Page App_, pensada específicamente para rodar em **tablets**, porém se adapta tanto para Desktops quando para modelos Mobile, tornando-a **responsiva**
 
-**Tela Tablet**
+# Tela Tablet
 
-![Home](src/assets/layout/tela_home.png)
+**Tela Inicial**
+![Home](src/assets/layout/bq_img.png)
 
-![Register](src/assets/layout/register.png)
+**Tela Salão - Pedidos**
+![Salão](src/assets/layout/bq_salao.png)
 
-![Menu](src/assets/layout/pedido.png)
+**Tela Cozinha - Pedidos**
+![Cozinha](src/assets/layout/bq_cozinha.png)
 
-![Entrega](src/assets/layout/pedido_entregar.png)
+**Tela Cozinha - Histórico**
+![Historico](src/assets/layout/bq_historico.png)
 
 ## 4. Considerações gerais
 
